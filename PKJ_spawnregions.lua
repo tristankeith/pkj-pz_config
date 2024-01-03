@@ -4,7 +4,6 @@ function SpawnRegions()
 		{ name = "Riverside, KY", file = "media/maps/Riverside, KY/spawnpoints.lua" },
 		{ name = "Rosewood, KY", file = "media/maps/Rosewood, KY/spawnpoints.lua" },
 		{ name = "West Point, KY", file = "media/maps/West Point, KY/spawnpoints.lua" },
-		{ name = "NSCarWorkshop", file = "media/maps/NSCarWorkshop/spawnpoints.lua" },
-		{ name = "RedstoneRaceway", file = "media/maps/RedstoneRaceway/spawnpoints.lua" },
+		{ name = "End of the Road, KY", serverfile = "LAGAY MO DITO KEITH YUNG PATH NG PKJ_spawnpoints.lua" },
 	}
 end
