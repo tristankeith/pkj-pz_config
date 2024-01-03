@@ -81,9 +81,9 @@ SandboxVars = {
     -- 7 = 2-6 Months
     ElecShut = 2,
     -- Minimum=-1 Maximum=2147483647 Default=14
-    WaterShutModifier = 15,
+    WaterShutModifier = 14,
     -- Minimum=-1 Maximum=2147483647 Default=14
-    ElecShutModifier = 15,
+    ElecShutModifier = 14,
     -- Default=Rare
     -- 1 = None (not recommended)
     -- 2 = Insanely Rare
@@ -107,7 +107,7 @@ SandboxVars = {
     -- 4 = Rare
     -- 5 = Normal
     -- 6 = Common
-    LiteratureLoot = 5,
+    LiteratureLoot = 4,
     -- Seeds, Nails, Saws, Fishing Rods, various tools, etc... Default=Rare
     -- 1 = None (not recommended)
     -- 2 = Insanely Rare
@@ -258,7 +258,7 @@ SandboxVars = {
     -- When > 0, loot will not respawn in zones that have been visited within this number of in-game hours. Minimum=0 Maximum=2147483647 Default=0
     SeenHoursPreventLootRespawn = 0,
     -- A comma-separated list of item types that will be removed after HoursForWorldItemRemoval hours.
-    WorldItemRemovalList = "Base.Hat,Base.Glasses,Base.Maggots",
+    WorldItemRemovalList = "Base.Hat,Base.Glasses,Base.Maggots,Base.Brass22,Base.Brass57,Base.Brass380,Base.Brass9,Base.Brass38,Base.Brass357,Base.Brass45,Base.Brass45LC,Base.Brass44,Base.Brass4570,Base.Brass50MAG,Base.Brass223,Base.Brass556,Base.Brass545x39,Base.Brass762x39,Base.Brass308,Base.Brass762x51,Base.Brass762x54r,Base.Brass3006,Base.Brass50BMG,Base.Hull410g,Base.Hull20g,Base.Hull12g,Base.Hull10g,Base.Hull4g",
     -- Number of hours since an item was dropped on the ground before it is removed.  Items are removed the next time that part of the map is loaded.  Zero means items are not removed. Minimum=0.00 Maximum=2147483647.00 Default=24.00
     HoursForWorldItemRemoval = 24.0,
     -- If true, any items *not* in WorldItemRemovalList will be removed.
@@ -343,7 +343,7 @@ SandboxVars = {
     -- 3 = Rare
     -- 4 = Sometimes
     -- 5 = Often
-    AnnotatedMapChance = 5,
+    AnnotatedMapChance = 4,
     -- Adds free points during character creation. Minimum=-100 Maximum=100 Default=0
     CharacterFreePoints = 10,
     -- Gives player-built constructions extra hit points so they are more resistant to zombie damage. Default=Normal
@@ -418,7 +418,7 @@ SandboxVars = {
     -- 2 = Very Low
     -- 3 = Low
     -- 4 = Normal
-    CarSpawnRate = 4,
+    CarSpawnRate = 3,
     -- Governs the chances of finding vehicles with gas in the tank. Default=Low
     -- 1 = Low
     -- 2 = Normal
@@ -596,9 +596,9 @@ SandboxVars = {
         -- The day when the population reaches it's peak. Minimum=1 Maximum=365 Default=28
         PopulationPeakDay = 40,
         -- The number of hours that must pass before zombies may respawn in a cell. If zero, spawning is disabled. Minimum=0.00 Maximum=8760.00 Default=72.00
-        RespawnHours = 0.0,
+        RespawnHours = 168.0,
         -- The number of hours that a chunk must be unseen before zombies may respawn in it. Minimum=0.00 Maximum=8760.00 Default=16.00
-        RespawnUnseenHours = 0.0,
+        RespawnUnseenHours = 168.0,
         -- The fraction of a cell's desired population that may respawn every RespawnHours. Minimum=0.00 Maximum=1.00 Default=0.10
         RespawnMultiplier = 0.0,
         -- The number of hours that must pass before zombies migrate to empty parts of the same cell. If zero, migration is disabled. Minimum=0.00 Maximum=8760.00 Default=12.00
@@ -649,7 +649,7 @@ SandboxVars = {
         BoolVisualEffects = true,
         -- Displays
         --  - Hit Damage on Zombie
-        BoolShowHitDamage = true,
+        BoolShowHitDamage = false,
         -- Displays
         --  - Distance to Target (on hit)
         --  - Hit Chance (approximate calculated) likely not accurate to current Core-Game calc
@@ -681,7 +681,7 @@ SandboxVars = {
         -- 8 = 70%
         -- 9 = 80%
         -- 10 = 90%
-        EnumEjectSpentCasings = 8,
+        EnumEjectSpentCasings = 11,
         -- Emergency Reload
         --  - Select the Condition(s) to Drop magazine to the Ground
         --  - Instead of placing one magazine back to inventory before inserting the next
@@ -2475,7 +2475,7 @@ SandboxVars = {
         PryingMechanic = true,
         -- Determines whether all doors can be pried open or not.
         -- By default, reinforced doors (Prison doors, metal grid doors, etc.) cannot be pried open up until Level 8 Strength.
-        PryAllDoors = true,
+        PryAllDoors = false,
         -- Displays the icon for Battery and Engine in vehicle dashboards in various colors depending on their condition. 
         PartsHighlighter = true,
         -- Toggles friendly colors for those affected by color blindness. 
@@ -2522,7 +2522,7 @@ SandboxVars = {
     },
     MoreBuilds = {
         -- Set max water storage capacity for well in more builds <LINE> note: set it to 9999 will display the capacity as unlimited Minimum=1 Maximum=10000 Default=800
-        MaxWaterWallStorageAmount = 1,
+        MaxWaterWallStorageAmount = 9999,
         -- Set the permission level that more build can be used in the server. if setting, only players with the specified permission level can build. By default, there is no permission limit. Default=None
         -- 1 = None
         -- 2 = Observer
@@ -2588,11 +2588,11 @@ SandboxVars = {
     },
     FC4WorkingTreadmill = {
         -- Minimum=0.00 Maximum=100.00 Default=1.00
-        FitnessXPMultiply = 0.3,
+        FitnessXPMultiply = 1.0,
         -- Minimum=0.00 Maximum=100.00 Default=1.00
-        StrengthXPMultiply = 0.5,
+        StrengthXPMultiply = 1.0,
         -- Minimum=0.00 Maximum=100.00 Default=1.00
-        SprintingXPMultiply = 1.5,
+        SprintingXPMultiply = 1.0,
     },
     bikinitools = {
         EnableGetKeyContext = false,
