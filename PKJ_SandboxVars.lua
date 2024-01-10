@@ -2529,7 +2529,7 @@ SandboxVars = {
         -- 3 = GM
         -- 4 = Overseer
         -- 5 = Moderator
-        BuildingPermission = 6,
+        BuildingPermission = 1,
     },
     ObviousCollecting = {
         -- If enabled, Players won't receive any items from picking up obvious stuff. 
