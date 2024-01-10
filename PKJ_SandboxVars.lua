@@ -3211,29 +3211,29 @@ SandboxVars = {
         -- Create zombie types with specific outfits (e.g. Cop, Firefighter, Soldier, Hazmat and Child)
         OutfitZ = true,
         -- The bigger this value is set, the faster zombies will evolve, set this to 0 for no evolving Minimum=0 Maximum=100 Default=5
-        EvoFactor = 7,
+        EvoFactor = 5,
         -- Speed: Normal HP: Normal Minimum=1 Maximum=100 Default=40
-        Normal = 35,
+        Normal = 50,
         -- Speed: Very Low HP: Normal Minimum=0 Maximum=100 Default=5
-        Crawler = 7,
+        Crawler = 5,
         -- Speed: Normal HP: High Minimum=0 Maximum=100 Default=12
-        Tough = 15,
+        Tough = 12,
         -- Speed: Slow HP: High Minimum=0 Maximum=100 Default=12
-        Fat = 15,
+        Fat = 12,
         -- Minimum=0 Maximum=100 Default=3
         Skeleton = 3,
         -- Speed: Fast, HP: Normal Minimum=0 Maximum=100 Default=4
         Feral = 3,
         -- Speed: Slow HP: Normal Minimum=0 Maximum=100 Default=12
-        Decayed = 15,
+        Decayed = 12,
         -- Speed: Normal HP: Normal (Can grab player) Minimum=0 Maximum=100 Default=5
         Grabber = 5,
         -- Speed: Normal HP: Normal (Can scream when following target) Minimum=0 Maximum=100 Default=2
-        Screamer = 1,
+        Screamer = 0,
         -- Speed: Normal HP: Normal (Can scream louder and cause panic) Minimum=0 Maximum=100 Default=1
-        ScreecherZ = 1,
+        ScreecherZ = 0,
         -- Speed: Normal HP: Hign (Can push player when attacking) Minimum=0 Maximum=100 Default=2
-        Wrestler = 3,
+        Wrestler = 2,
         -- Speed: Fast HP: Hign (Can push player when attacking) Minimum=0 Maximum=100 Default=0
         Brute = 1,
         -- Speed: Slow HP: Normal (Can evolve nearby zombies) Minimum=0 Maximum=100 Default=1
