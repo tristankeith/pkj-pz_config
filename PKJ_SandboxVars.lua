@@ -50,7 +50,7 @@ SandboxVars = {
     -- 9 = September
     -- 10 = October
     -- 11 = November
-    StartMonth = 1,
+    StartMonth = 5,
     StartDay = 1,
     -- Default=9 AM
     -- 1 = 7 AM
@@ -61,7 +61,7 @@ SandboxVars = {
     -- 6 = 9 PM
     -- 7 = 12 AM
     -- 8 = 2 AM
-    StartTime = 1,
+    StartTime = 3,
     -- Default=0-30 Days
     -- 1 = Instant
     -- 2 = 0-30 Days
@@ -181,11 +181,11 @@ SandboxVars = {
     -- 2 = Fast (50 Days)
     -- 3 = Normal (100 Days)
     -- 4 = Slow (200 Days)
-    ErosionSpeed = 1,
+    ErosionSpeed = 3,
     -- Number of days until 100% growth. -1 means no growth. Zero means use the Erosion Speed option. Maximum 36,500 (100 years). Minimum=-1 Maximum=36500 Default=0
     ErosionDays = 0,
     -- Modifies the base XP gain from actions by this number. Minimum=0.00 Maximum=1000.00 Default=1.00
-    XpMultiplier = 10.0,
+    XpMultiplier = 1.0,
     -- Determines if the XP multiplier affects passively levelled skills eg. Fitness and Strength.
     XpMultiplierAffectsPassive = true,
     -- Use this to multiply or reduce engine general loudness. Minimum=0.00 Maximum=100.00 Default=1.00
@@ -345,7 +345,7 @@ SandboxVars = {
     -- 5 = Often
     AnnotatedMapChance = 4,
     -- Adds free points during character creation. Minimum=-100 Maximum=100 Default=0
-    CharacterFreePoints = 10,
+    CharacterFreePoints = 0,
     -- Gives player-built constructions extra hit points so they are more resistant to zombie damage. Default=Normal
     -- 1 = Very Low
     -- 2 = Low
@@ -592,15 +592,15 @@ SandboxVars = {
         -- Adjusts the desired population at the start of the game. Minimum=0.00 Maximum=4.00 Default=1.00
         PopulationStartMultiplier = 0.1,
         -- Adjusts the desired population on the peak day. Minimum=0.00 Maximum=4.00 Default=1.50
-        PopulationPeakMultiplier = 4.0,
+        PopulationPeakMultiplier = 1.5,
         -- The day when the population reaches it's peak. Minimum=1 Maximum=365 Default=28
         PopulationPeakDay = 40,
         -- The number of hours that must pass before zombies may respawn in a cell. If zero, spawning is disabled. Minimum=0.00 Maximum=8760.00 Default=72.00
-        RespawnHours = 168.0,
+        RespawnHours = 720.0,
         -- The number of hours that a chunk must be unseen before zombies may respawn in it. Minimum=0.00 Maximum=8760.00 Default=16.00
-        RespawnUnseenHours = 168.0,
+        RespawnUnseenHours = 720.0,
         -- The fraction of a cell's desired population that may respawn every RespawnHours. Minimum=0.00 Maximum=1.00 Default=0.10
-        RespawnMultiplier = 0.0,
+        RespawnMultiplier = 0.1,
         -- The number of hours that must pass before zombies migrate to empty parts of the same cell. If zero, migration is disabled. Minimum=0.00 Maximum=8760.00 Default=12.00
         RedistributeHours = 12.0,
         -- The distance a zombie will try to walk towards the last sound it heard. Minimum=10 Maximum=1000 Default=100
@@ -615,9 +615,7 @@ SandboxVars = {
         RallyGroupRadius = 3,
     },
     DAMN = {
-        AllowPowerChadSpawns = true,
         AllowBushmasterSpawns = true,
-        AllowMrBusSpawns = true,
     },
     A26 = {
         -- Displays
@@ -871,7 +869,7 @@ SandboxVars = {
         -- 8 = 120%
         -- 9 = 130%
         -- 10 = 140%
-        EnumArcheryDamage = 7,
+        EnumArcheryDamage = 6,
         -- Firearm Damage
         --  - Decrease or Increase Damage for all Firearm Weapons
         --  - By the option amount selected
@@ -2446,16 +2444,6 @@ SandboxVars = {
         -- Allow Core Game to add Associated Magazines and Loose or Box Ammo in Surplus Location containers
         BoolSURammo = true,
     },
-    BecomeDesensitized = {
-        -- Minimum zombie kills required to have a chance to become desensitized. Minimum=1 Maximum=10000 Default=500
-        MinimumZombieKills = 500,
-        -- Maximum zombie kills required to become desensitized Minimum=1 Maximum=10000 Default=2000
-        MaximumZombieKills = 6666,
-        -- Consider traits that can increase the chance of becoming desensitized (more info in workshop page)
-        ConsiderTraits = true,
-        -- Consider occupations Police, Fireman, Park Ranger, Security Guard, Doctor and Nurse that can increase the chance of becoming desensitized
-        ConsiderOccupations = true,
-    },
     BetterBatteries = {
         -- Amount of in-game minutes it takes to charge a battery from empty to full without penalties / buffs in place. Minimum=0.00 Maximum=1440.00 Default=60.00
         CrankTime = 60.0,
@@ -2482,26 +2470,6 @@ SandboxVars = {
         ColorFilter = false,
         -- Minimum=0.00 Maximum=5.00 Default=1.00
         PryingChanceMultiplier = 1.0,
-    },
-    HordeNightMain = {
-        -- At which hour would the HordeNight start. Minimum=0 Maximum=23 Default=22
-        HordeNightHour = 22,
-        -- At which day would the first HordeNight start. 0 means the spawn day, 1 means the day after the spawn day. Minimum=0 Maximum=365 Default=10
-        FirstHordeNightDay = 40,
-        -- How many days would a HordeNight start after one another. 1 means HordeNight every day. Minimum=1 Maximum=365 Default=5
-        HordeNightFrequency = 180,
-        -- How many zombies would spawn at the first HordeNight. Warnning: too much spawn will cause performance issues. Minimum=1 Maximum=7200 Default=100
-        FirstHordeNightZombiesCount = 20,
-        -- How many more zombies would spawn in the next HordeNight after you survived one. Warnning: too much spawn will cause performance issues. Minimum=0 Maximum=1000 Default=50
-        HordeNightZombieIncrement = 10,
-        -- The maximal amount of zombies could spawn in a HordeNight. Warnning: too much spawn will cause performance issues. Minimum=0 Maximum=7200 Default=800
-        HordeNightZombieCountMax = 125,
-        -- The random chance to start a HordeNight, outside of the regular frequency. It will only happen after the first HordeNight. 0.0 means no random HordeNight, 1.0 means HordeNight everyday. Minimum=0.00 Maximum=1.00 Default=0.00
-        RandomHordeNightChance = 0.0,
-        -- The maximal distance for a HordeNight zombie to spawn around players.  Turn down the value if you don't see zombies spawn in the HordeNight. Minimum=10 Maximum=90 Default=75
-        HordeNightZombieSpawnDistance = 40,
-        -- When it's on, there will be an icon on the top right if it's currently the HordeNight day.This will not indicates the random HordeNight.
-        HordeNightIndicator = true,
     },
     KillCount = {
         -- May provoke stutters.
@@ -2551,7 +2519,7 @@ SandboxVars = {
         -- This will make text smaller, but this font doesn't support non ascii usernames.
         FontDebugConsole = false,
         -- Distance after which player won't show on a map. (Doesn't affect admins) Minimum=-1 Maximum=999999999 Default=-1
-        MaxDistance = 99999999,
+        MaxDistance = 999999999,
     },
     ProxInv = {
         -- Enable this if you want the Proximity Inventory to work only on zombies
@@ -2586,14 +2554,6 @@ SandboxVars = {
     VehicleRepairOverhaul = {
         DisableVehicleSalvage = false,
     },
-    FC4WorkingTreadmill = {
-        -- Minimum=0.00 Maximum=100.00 Default=1.00
-        FitnessXPMultiply = 1.0,
-        -- Minimum=0.00 Maximum=100.00 Default=1.00
-        StrengthXPMultiply = 1.0,
-        -- Minimum=0.00 Maximum=100.00 Default=1.00
-        SprintingXPMultiply = 1.0,
-    },
     bikinitools = {
         EnableGetKeyContext = false,
         EnableOpenSesame = false,
@@ -2612,388 +2572,6 @@ SandboxVars = {
         EnableHomeWrecker = false,
         EnableCorpseStacker = true,
         EnableVehicleItemHide = true,
-    },
-    CF8KSweeper = {
-        AllowTiles = true,
-        -- You can list exact sprite names or the start of tilepacks. Separate them with ;
-        SpriteWhitelist = "brokenglass_1_;trash_01_;d_trash_;street_decoration_01_26;street_decoration_01_27;damaged_objects_01_26;damaged_objects_01_27;damaged_objects_01_18;damaged_objects_01_19;damaged_objects_01_20;damaged_objects_01_21",
-        AllowBlood = true,
-        AllowGrime = true,
-        AllowAshes = true,
-        AllowItems = true,
-        AllowCorpses = true,
-    },
-    MoreTraits = {
-        -- The amount of bandages given by the Prepare Medical trait. Minimum=1 Maximum=999 Default=4
-        PreparedMedicalBandageAmount = 4,
-        -- Players who choose the Prepared: Cars trait start with a gas can.
-        PreparedCarGasToggle = true,
-        -- Whether or not players who take the Injured trait can receive burns as a random injury.
-        -- Burns can be extremely debilitating especially if on the legs.
-        InjuredBurns = true,
-        -- Players who take the Alcoholic trait start with a free bottle of alcohol.
-        AlcoholicFreeDrink = true,
-        SmokerStart = true,
-        -- The percent degree to which Lucky and Unlucky traits affect traits from this mod.
-        -- 0% means lucky and unlucky have no effect on traits. Minimum=0 Maximum=200 Default=100
-        LuckImpact = 100,
-        -- How many hours (on average) should an alcoholic need to drink to sate their need?
-        -- Lower values mean Alcoholics need to drink frequently to avoid withdrawal. Minimum=1 Maximum=720 Default=24
-        AlcoholicFrequency = 24,
-        -- After how many hours without alcohol should an alcoholic start suffering withdrawal symptoms?
-        -- This value should be higher than Alcoholic Drink Frequency. Minimum=1 Maximum=720 Default=72
-        AlcoholicWithdrawal = 72,
-        -- The percent value that XP is reduced by for those who take a Specialization trait.
-        -- Set to 0% to disable XP reduction. Minimum=0 Maximum=90 Default=75
-        SpecializationXPPercent = 75,
-        -- The percent chance that a player who has the Bouncer trait will trigger its effect.
-        -- This is rolled every tick, so 60 times/second for as long as the player has at least two or more zombies near them.
-        -- Increasing this value by even a small amount can dramatically overpower Bouncer. Minimum=1 Maximum=100 Default=5
-        BouncerEffectiveness = 5,
-        -- How many ticks between Bouncer shoves.
-        -- 60 ticks = 1 second
-        -- Reducing this value can dramatically overpower Bouncer. Minimum=1 Maximum=240 Default=60
-        BouncerCooldown = 60,
-        -- The distance (in tile squares) from the player out to which Bouncer begins attempting to shove enemies away. 
-        -- Lower values means Bouncer will take effect only at closer ranges to the player. Minimum=0.25 Maximum=5.00 Default=1.75
-        BouncerDistance = 1.75,
-        -- The percent amount extra Fitness/Strength XP a player receives from working out if they have the Gym Goer trait.
-        -- Setting this to 100% means no extra XP is gained. Minimum=100 Maximum=1000 Default=200
-        GymGoerPercent = 200,
-        -- Should Gym Goer affect Exercise Fatigue?
-        -- If this option is un-checked, players with Gym Goer will suffer from exercise fatigue as normal.
-        GymGoerNoExerciseFatigue = true,
-        -- If true, Indefatigable trait can be used only once per character.
-        -- If false, it will recharge based on the option below.
-        -- Note: If false, it will cure zombification only once.
-        IndefatigableOneUse = true,
-        -- After how many in-game days should the indefatigable ability recharge?
-        -- Note: This option will only work if "Indefatigable One Use" option is disabled. Minimum=7 Maximum=30 Default=7
-        IndefatigableRecharge = 7,
-        -- A percent value representing how effective the Gordanite trait makes players with Crowbars.
-        -- Setting this to 200% will make Gordanite twice as powerful. Minimum=0 Maximum=1000 Default=100
-        GordaniteEffectiveness = 100,
-        -- A percent value representing how strong the scaling in damage for Martial Artist is.
-        -- Setting this to 50% would halve all damage. Minimum=25 Maximum=1000 Default=100
-        MartialScaling = 100,
-        -- If this is enabled, knocking down zombies with Battering Ram trait will damage them if you have Martial Artist trait.
-        BatteringRamMartialCombo = true,
-        -- The percent chance that a player with the Evasive trait will dodge an attack.
-        -- Setting this to 100% will make players with Evasive immune to zombies. Minimum=0 Maximum=100 Default=33
-        EvasiveChance = 33,
-        -- If enabled, Evasive has no "being hit" animation when it activates
-        EvasiveAnimation = true,
-        -- If true, Evasive can dodge attacks from other players.
-        EvasiveBlocksPVP = false,
-        -- The chance in X how frequently a player with Butterfingers will drop an item.
-        -- The base chance is 5, so by default this value would be a 5/2000 chance calculated every in-game minute.
-        -- Lowering this value could result in players constantly dropping their items. Minimum=100 Maximum=10000 Default=2000
-        ButterfingersChance = 2000,
-        -- The % chance that a player with the Grave Robber trait will find extra loot on a zombie corpse. Chance is rounded down to nearest 0.1% Minimum=0.10 Maximum=100.00 Default=1.00
-        GraveRobberChance = 1.0,
-        -- How much guaranteed extra loot will Grave Robber's find on zombie corpses?
-        -- By default, a random value is determined. Increasing this value guarantees extra loot whenever loot is rolled. Minimum=0 Maximum=10 Default=1
-        GraveRobberGuaranteedLoot = 1,
-        -- A percent value representing the chance that a player with the Scrounger trait will find extra loot in any container.
-        -- 100% would make every container have extra loot. Minimum=1 Maximum=100 Default=20
-        ScroungerChance = 20,
-        -- A percent value representing how likely any item in a container is to be duplicated by Scrounger.
-        -- For example: Scrounger Chance is the percent chance that any given container will potentially have extra loot in it.
-        -- Once a container passes this initial check, another series of checks is run - for every single item inside that container, a die is rolled to determine if that item is duplicated.
-        -- If for instance, this value is set to 100%, then whenever Scrounger is triggered, the entire contents of that container will be duplicated.
-        -- If Scrounger Chance, and Scrounger Item Chance are both 100%, then anyone with the Scrounger trait will find double the loot in every container. Minimum=1 Maximum=100 Default=10
-        ScroungerItemChance = 10,
-        -- A percent value representing how much extra loot players with the Scrounger trait will find when Scrounger triggers.
-        -- 100% would double the amount of extra loot players find.
-        -- This value always rounds up, so even a single item can potentially be doubled.
-        -- This effect is most noticed in stacks of items such as cigarettes or ammunition. Minimum=10 Maximum=1000 Default=30
-        ScroungerLootModifier = 30,
-        -- A percent value representing the chance that a player with the Incomprehensive trait will find fewer items in any container.
-        -- Setting this to 100% would make every container lose some items. Minimum=1 Maximum=100 Default=10
-        IncomprehensiveChance = 10,
-        -- A percent value representing the chance that a player with the Vagabond trait will find extra food in a garbage bin.
-        -- Setting this to 100% would make every trash bin contain extra food. Minimum=1 Maximum=100 Default=33
-        VagabondChance = 33,
-        -- How many extra food items is a player with the Vagabond trait guaranteed to find in a garbage bin?
-        -- By default, a random value between 0 and 2 is selected. This value adds to that range.
-        -- (eg; roll a random number between 0 and 2 and then add x, where x is this value.) Minimum=0 Maximum=10 Default=1
-        VagabondGuaranteedExtraLoot = 1,
-        -- Defines the base inventory carry capacity for those who take the Pack Mule trait.
-        -- This is the base value before applying bonuses from Strength. Minimum=1 Maximum=100 Default=10
-        WeightPackMule = 25,
-        -- Defines the base inventory carry capacity for those who take the Pack Mouse trait.
-        -- This is the base value before applying bonuses from Strength. Minimum=1 Maximum=100 Default=6
-        WeightPackMouse = 6,
-        -- Defines the base inventory carry capacity for players with neither Pack Mule nor Pack Mouse traits.
-        -- This is the base value before applying bonuses from Strength. Minimum=1 Maximum=100 Default=8
-        WeightDefault = 15,
-        -- Gives bonus inventory carry capacity to all players.
-        -- You can set a negative value to reduce all player inventory capacity globally as well. Minimum=-100 Maximum=100 Default=0
-        WeightGlobalMod = 0,
-        -- How much extra time is added to TimedActions being performed by players with the Quick Worker trait.
-        -- Higher values make TimedActions perform more rapidly.
-        -- This is a fine granular value with 100 translating to a 0.1 (10%) increase in speed. Minimum=1 Maximum=1000 Default=100
-        QuickWorkerScaler = 100,
-        -- How much longer it takes to perform TimedActions.
-        -- Higher values make TimedActions perform more slowly.
-        -- Setting this too high can make it excruciatingly slow to do any actions - especially reading books. Minimum=5 Maximum=50 Default=15
-        SlowWorkerScaler = 15,
-        -- Limit the amount of free recipes granted by Ingenuitive?
-        -- By default, all recipes are taught for players who have Ingenuitive.
-        -- Turning this on allows you to limit how much they learn instead.
-        IngenuitiveLimit = false,
-        -- What percent of unknown recipes should be learned by Ingenuitive?
-        -- This is randomly chosen out of all available recipes. Minimum=5 Maximum=95 Default=50
-        IngenuitiveLimitAmount = 50,
-        -- By default, Martial Artist will only deal damage if the player is unarmed.
-        -- If enabled, players' shoves will still deal damage even if they are wielding a weapon.
-        -- If this option is disabled, you can still benefit from Martial Artist with an item in your Secondary slot (Flashlight, Bag, etc). It only checks if the Primary slot is equipped.
-        MartialWeapons = false,
-        -- How rare Antique Collector items are.
-        -- This value is representative of a 1 in X roll.
-        -- Higher values mean drops happen less frequently. Minimum=100 Maximum=10000 Default=1500
-        AntiqueChance = 1500,
-        -- If true, Antique Collector trait will be able to find antique items anywhere, instead of only in crates and metal shelves.
-        AntiqueAnywhere = false,
-        -- Players who take the Deprived trait will still be allowed to keep a belt.
-        -- Belts are ordinarily difficult to obtain through normal play without killing other players or mods which add them to loot tables.
-        ForgivingDeprived = false,
-        -- Players who take the alcoholic trait can never die from alcohol poisoning, but will still suffer periodic withdrawal.
-        NonlethalAlcoholic = false,
-        -- After how much days should Second Wind recharge? Minimum=1 Maximum=30 Default=14
-        SecondWindCooldown = 14,
-        -- How much extra endurance should hardy give? Minimum=5 Maximum=50 Default=25
-        HardyEndurance = 25,
-        -- Minimum days that a Super Immune character takes to heal the sickness. Minimum=5 Maximum=60 Default=10
-        SuperImmuneMinDays = 7,
-        -- Maximum days that a Super Immune character takes to heal the sickness. Minimum=5 Maximum=60 Default=30
-        SuperImmuneMaxDays = 30,
-        -- If true, any infections after the first one was cured will only last half as long.
-        -- Note: If caught multiple infections, it can still reach maximum days.
-        SuperImmuneFirstInfectionBonus = true,
-        -- If this setting is on, Super Immune will not be able to defend your body if it caught several infections.
-        SuperImmuneWeakness = false,
-        -- If true, Super Immune is 6 times faster than normal.
-        -- Preferably used in multiplayer games where you can't fast forward time.
-        QuickSuperImmune = false,
-        -- Chance for a player with Immunocompromised to get infected by a zombie attack.
-        -- Setting this value to 100 will make every zombie attack infectious. Minimum=0 Maximum=100 Default=25
-        ImmunoChance = 25,
-        -- If true, Prowess: Guns will have a chance to not consume ammo. Not exactly lore-wise friendly, but fun.
-        ProwessGunsAmmoRestore = true,
-        -- If you run both More Traits and Expended Traits, they both have perks that update carry weight.
-        -- If this is checked on, Hoarder (from Expended Traits) and carry weight from this mod (Pack Mule/Mouse) will stack. Which means that whatever carry weight you get with Pack Mule/Pack Mouse will be multiplied by 1.25.
-        -- If this is checked off, and you have both perks (Hoarder and Pack Mule/Mouse) either Hoarder or Pack Mouse/Mule will run its code first meaing I honestly don't know if your max weight will be calculated by Hoarder code or Pack Mule code
-        HoarderCompatibility = true,
-        -- Distance at which Burn Ward Patient gets activated by fire.
-        -- Keep in mind, the higher this value is, the more panic and anxiety you will get from being close.
-        -- Warning: Higher values might lead to FPS issues Minimum=5 Maximum=50 Default=20
-        BurnedDistance = 20,
-        -- Panic you will get from Burn Ward Patient.<Br>Scaling works by repeatedly adding panic until max distance number is reached, starting from distance of closest fire.
-        -- What this means is, if fire is 1 tile away and max is 20, it will give 20x panic than this number. This happens every one minute in-game. Minimum=1 Maximum=10 Default=1
-        BurnedPanic = 1,
-        -- Stress you will get from Burn Ward Patient.<Br>Scaling works by repeatedly adding stress until max distance number is reached, starting from distance of closest fire.
-        -- What this means is, if fire is 1 tile away and max is 20, it will give 20x stress than this number. This happens every one minute in-game. Minimum=1 Maximum=10 Default=1
-        BurnedStress = 1,
-    },
-    MoreTraitsDynamic = {
-        AntiGunActivistDynamic = true,
-        -- Minimum=0 Maximum=10 Default=6
-        AntiGunActivistDynamicSkill = 6,
-        -- Firearms Minimum=0 Maximum=100000 Default=600
-        AntiGunActivistDynamicKill = 600,
-        -- Requires scavenging skill mod, otherwise always static
-        AntiqueCollectorDynamic = true,
-        -- Minimum=0 Maximum=10 Default=10
-        AntiqueCollectorDynamicSkill = 10,
-        AsceticDynamic = true,
-        -- Minimum=0 Maximum=10 Default=5
-        AsceticDynamicSkill = 5,
-        BouncerDynamic = true,
-        -- Minimum=0 Maximum=10 Default=7
-        BouncerDynamicSmallBlunt = 7,
-        -- Minimum=0 Maximum=10 Default=7
-        BouncerDynamicStrength = 7,
-        EvasiveDynamic = true,
-        -- Fitness + Sprinting + Lightfoot + Nimble + Sneak Minimum=0 Maximum=50 Default=40
-        EvasiveDynamicSkill = 40,
-        FastDynamic = true,
-        -- Sprinting + Lightfoot + Nimble + Sneak Minimum=0 Maximum=40 Default=30
-        FastDynamicSkill = 30,
-        FastWorkerDynamic = true,
-        -- Carpentry + Cooking + Farming + First Aid + electrical + Metalworking + Mechanics + Tailoring Minimum=0 Maximum=80 Default=60
-        FastWorkerDynamicSkill = 60,
-        FlexibleDynamic = true,
-        -- Minimum=0 Maximum=10 Default=4
-        FlexibleDynamicSkill = 4,
-        GordaniteDynamic = true,
-        -- Minimum=0 Maximum=10 Default=6
-        GordaniteDynamicSkill = 6,
-        -- Long Blunt Minimum=0 Maximum=100000 Default=300
-        GordaniteDynamicKill = 300,
-        GourmandDynamic = true,
-        -- Minimum=0 Maximum=10 Default=9
-        GourmandDynamicSkill = 9,
-        -- Requires scavenging skill mod, otherwise always static
-        GraverobberDynamic = true,
-        -- Minimum=0 Maximum=10 Default=8
-        GraverobberDynamicSkill = 8,
-        -- Minimum=0 Maximum=100000 Default=1000
-        GraverobberDynamicKill = 1000,
-        GruntWorkerDynamic = true,
-        -- Minimum=0 Maximum=10 Default=4
-        GruntWorkerDynamicSmallBlunt = 4,
-        -- Minimum=0 Maximum=10 Default=5
-        GruntWorkerDynamicWoodwork = 5,
-        -- Short blunt Minimum=0 Maximum=100000 Default=200
-        GruntWorkerDynamicKill = 200,
-        GymGoerDynamic = true,
-        -- Strength + Fitness Minimum=0 Maximum=20 Default=14
-        GymGoerDynamicSkill = 14,
-        HardyDynamic = true,
-        -- Minimum=0 Maximum=10 Default=7
-        HardyDynamicSkill = 7,
-        IdealWeightDynamic = true,
-        -- How many days you have to keep your weight between 78 and 82 to earn the trait. Check is made every in-game hour. Minimum=0 Maximum=100000 Default=21
-        IdealWeightDynamicTargetDaysToObtain = 21,
-        -- How many hours you can be not between 78-82 weight while earning the trait and not reset your progress. Check is made every in-game hour. Minimum=0 Maximum=100000 Default=24
-        IdealWeightDynamicObtainGracePeriod = 24,
-        -- How fast you earn 'grace period' hours that later are used up before you lose the trait if you're not between 75-85 weight. Default multiplier of 1 earns you 1 grace period hour for every 12h of keeping weight 78-82 (Basically 0.0834 grace hours for each 1h). Higher multiplier = faster gain of grace hours. Lower multiplier = slower gain of grace hours. Minimum=0.00 Maximum=100.00 Default=1.00
-        IdealWeightDynamicLoseGracePeriodMultiplier = 1.0,
-        -- How many hours can you 'earn' on counter that later will be used before you lose your Ideal Weight trait if your weight is not between 75-85 Minimum=0 Maximum=100000 Default=18
-        IdealWeightDynamicLoseGracePeriodCap = 18,
-        ImmunocompromisedDynamic = true,
-        -- How many hours does wounds on your body need to be infected for to loose Immunocompromised. Each body part is counted separately so if you have 3 infected wounds, you'd earn +3 to the counter in 1h. Minimum=0 Maximum=100000 Default=2000
-        ImmunocompromisedDynamicInfectionTime = 2000,
-        -- Requires scavenging skill mod, otherwise always static
-        IncomprehensiveDynamic = true,
-        -- Minimum=0 Maximum=10 Default=4
-        IncomprehensiveDynamicSkill = 4,
-        IndefatigableDynamic = true,
-        -- Strength + Fitness + Sprinting + Lightfoot + Nimble + Sneak + Axe + Blunt + SmallBlunt + LongBlade + SmallBlade + Spear Minimum=0 Maximum=120 Default=110
-        IndefatigableDynamicSkill = 110,
-        LeadFootDynamic = true,
-        -- Finish zombies by stomping them. Only last hit needs to be stomp Minimum=0 Maximum=50000 Default=200
-        LeadFootDynamicKill = 200,
-        MartialArtistDynamic = true,
-        -- Minimum=0 Maximum=10 Default=6
-        MartialArtistDynamicSmallBlunt = 6,
-        -- Minimum=0 Maximum=10 Default=6
-        MartialArtistDynamicFitness = 6,
-        -- Requires driving skill mod, otherwise always static
-        MotionSickenssDynamic = true,
-        -- Minimum=0 Maximum=10 Default=5
-        MotionSickenssDynamicSkill = 5,
-        MundaneDynamic = true,
-        -- Amount of damage you need to deal to lose the trait. Zombies have between 0-2 hp. Minimum=0 Maximum=500000 Default=5000
-        MundaneDynamicDamage = 5000,
-        NaturalEaterDynamic = true,
-        -- Minimum=0 Maximum=10 Default=2
-        NaturalEaterDynamicCooking = 2,
-        -- Minimum=0 Maximum=10 Default=4
-        NaturalEaterDynamicForaging = 4,
-        NoodleLegsDynamic = true,
-        -- Fitness + Sprinting + Lightfoot + Nimble + Sneak Minimum=0 Maximum=50 Default=30
-        NoodleLegsDynamicSkill = 30,
-        OlympianDynamic = true,
-        -- Minimum=0 Maximum=10 Default=5
-        OlympianDynamicSkillSprinting = 5,
-        -- Minimum=0 Maximum=10 Default=6
-        OlympianDynamicSkillFitness = 6,
-        PackMouseDynamic = true,
-        -- Minimum=0 Maximum=10 Default=7
-        PackMouseDynamicSkill = 7,
-        PackMuleDynamic = true,
-        -- Minimum=0 Maximum=10 Default=9
-        PackMuleDynamicSkill = 9,
-        ParanoiaDynamic = true,
-        -- How many hours you need to be panicked and stressed (at same time) above average to get rid of trait Minimum=0 Maximum=100000 Default=200
-        ParanoiaDynamicHoursLose = 200,
-        PracticedSwordsmanDynamic = true,
-        -- Long Blade + Short Blade Minimum=0 Maximum=20 Default=10
-        PracticedSwordsmanDynamicSkill = 10,
-        -- Long Blade + Short Blade Minimum=0 Maximum=100000 Default=500
-        PracticedSwordsmanDynamicKill = 500,
-        ProwessBladeDynamic = true,
-        -- Axe + Short Blade + Long Blade Minimum=0 Maximum=30 Default=24
-        ProwessBladeDynamicSkill = 24,
-        -- Axe + Short Blade + Long Blade Minimum=0 Maximum=100000 Default=1200
-        ProwessBladeDynamicKill = 1200,
-        ProwessBluntDynamic = true,
-        -- Short Blunt + Long Blunt Minimum=0 Maximum=20 Default=16
-        ProwessBluntDynamicSkill = 16,
-        -- Short Blunt + Long Blunt Minimum=0 Maximum=100000 Default=800
-        ProwessBluntDynamicKill = 800,
-        ProwessGunsDynamic = true,
-        -- Minimum=0 Maximum=10 Default=8
-        ProwessGunsDynamicAiming = 8,
-        -- Aiming + Reloading Minimum=0 Maximum=20 Default=16
-        ProwessGunsDynamicSkill = 16,
-        -- Firearm Minimum=0 Maximum=100000 Default=800
-        ProwessGunsDynamicKill = 800,
-        ProwessSpearDynamic = true,
-        -- Spear Minimum=0 Maximum=10 Default=8
-        ProwessSpearDynamicSkill = 8,
-        -- Spear Minimum=0 Maximum=100000 Default=400
-        ProwessSpearDynamicKill = 400,
-        QuietDynamic = true,
-        -- Minimum=0 Maximum=10 Default=4
-        QuietDynamicSkill = 4,
-        ScrapperDynamic = true,
-        -- Minimum=0 Maximum=10 Default=5
-        ScrapperDynamicMaintenance = 5,
-        -- Minimum=0 Maximum=10 Default=5
-        ScrapperDynamicMetalWelding = 5,
-        -- Requires scavenging skill mod, otherwise always static
-        ScroungerDynamic = true,
-        -- Minimum=0 Maximum=10 Default=6
-        ScroungerDynamicSkill = 6,
-        SecondWindDynamic = true,
-        -- Strength + Fitness Minimum=0 Maximum=20 Default=18
-        SecondWindDynamicSkill = 18,
-        SlowWorkerDynamic = true,
-        -- Carpentry + Cooking + Farming + First Aid + Electricity + MetalWelding + Mechanics + Tailoring Minimum=0 Maximum=80 Default=30
-        SlowWorkerDynamicSkill = 30,
-        SlowpokeDynamic = true,
-        -- Sprinting + Lightfoot + Nimble + Sneak Minimum=0 Maximum=40 Default=20
-        SlowpokeDynamicSkill = 20,
-        SwiftDynamic = true,
-        -- Minimum=0 Maximum=10 Default=4
-        SwiftDynamicSkill = 4,
-        SuperImmuneDynamic = true,
-        -- How many hours does wounds on your body need to be infected for to earn Super-Immune. Each body part is counted separately so if you have 3 infected wounds, you'd earn +3 to the counter in 1h. Minimum=0 Maximum=100000 Default=5000
-        SuperImmuneDynamicInfectionTime = 10100,
-        TavernBrawlerDynamic = true,
-        -- Axe + Short Blunt + Long Blunt + Short Blade + Long Blade Minimum=0 Maximum=60 Default=12
-        TavernBrawlerDynamicSkill = 12,
-        TerminatorDynamic = true,
-        -- Aiming + Reloading + Nimble Minimum=0 Maximum=30 Default=28
-        TerminatorDynamicSkill = 28,
-        -- Firearms Minimum=0 Maximum=100000 Default=1400
-        TerminatorDynamicKill = 1400,
-        ThuggishDynamic = true,
-        -- Long Blunt + Short Blunt Minimum=0 Maximum=20 Default=10
-        ThuggishDynamicSkill = 10,
-        -- Short Blunt + Long Blunt Minimum=0 Maximum=100000 Default=500
-        ThuggishDynamicKill = 500,
-        TinkererDynamic = true,
-        -- Electricity + Mechanics + Tailoring Minimum=0 Maximum=30 Default=12
-        TinkererDynamicSkill = 12,
-        UnwaveringDynamic = true,
-        -- This is internal counter that needs to be reached before you get the trait. Each injury below belt adds to counter every 10 min. Deep Wound > Laceration > Burn/Fracture > Scratch > Bleeding. For example, having burns on 1 bodypart below belt would result in getting around +2.3 on counter in 24h. Having 1 fracture gives around +3 in 24h. Minimum=0 Maximum=100000 Default=500
-        UnwaveringDynamicCounter = 500,
-        -- Requires scavenging skill mod, otherwise always static
-        VagabondDynamic = true,
-        -- Minimum=0 Maximum=10 Default=5
-        VagabondDynamicSkill = 5,
-        WellFittedDynamic = true,
-        -- Minimum=0 Maximum=10 Default=8
-        WellFittedDynamicSkill = 8,
-        WildsmanDynamic = true,
-        -- Foraging + Fishing + Trapping Minimum=0 Maximum=30 Default=8
-        WildsmanDynamicSkill = 8,
-        -- Minimum=0 Maximum=100000 Default=200
-        WildsmanDynamicKill = 200,
     },
     MoreMaps = {
         -- As junk items, with the same chance as the vanilla maps, some rarer.
@@ -3240,5 +2818,197 @@ SandboxVars = {
         Master = 1,
         -- Speed: Slow HP: Normal (Can reanimate nearby corpses) Minimum=0 Maximum=100 Default=1
         Necromancer = 1,
+    },
+    SOTO = {
+        -- Possibility to obtain XP boosts while leveling agility skills.
+        -- For example player can obtain Sneaky trait to increase their XP gain for Sneaking skill.
+        AgilityTraitsObtainable = true,
+        -- Possibility to obtain XP boosts while leveling combat skills.
+        -- For example player can obtain Baseball Player trait to increase their XP gain for Long Blunt skill.
+        CombatTraitsObtainable = true,
+        -- Possibility to obtain XP boosts while leveling survivalist skills.
+        -- For example player can obtain Forager trait to increase their XP gain for Foraging skill.
+        SurvTraitsObtainable = false,
+        -- Possibility to obtain XP boosts while leveling crafting skills.
+        -- For example player can obtain Scullion trait to increase their XP gain for Cooking skill.
+        CraftTraitsObtainable = false,
+        -- Possibility to obtain XP boosts while leveling firearm skills.
+        -- For example player can obtain Shooter trait to increase their XP gain for Aiming skill.
+        FirearmTraitsObtainable = true,
+        -- Player can earn 1 Fitness XP once per game minute with 50% chance while running.
+        AddFitXPWhileRun = true,
+        -- Should be lower than Max. 1 day = 24 Minimum=1 Maximum=100000 Default=168
+        LoseCowardlyHoursMIN = 168,
+        -- Should be higher than Min. 1 day = 24 Minimum=1 Maximum=100000 Default=336
+        LoseCowardlyHoursMAX = 336,
+        -- Should be lower than Max. Minimum=1 Maximum=100000 Default=1250
+        LoseCowardlyZombMIN = 1250,
+        -- Should be higher than Min. Minimum=1 Maximum=100000 Default=2500
+        LoseCowardlyZombMAX = 2500,
+        -- Should be lower than Max. 1 day = 24
+        -- x1.2 when starting with Cowardly trait. Minimum=1 Maximum=100000 Default=504
+        EarnBraveHoursMIN = 504,
+        -- Should be higher than Min. 1 day = 24
+        -- x1.2 when starting with Cowardly trait. Minimum=1 Maximum=100000 Default=840
+        EarnBraveHoursMAX = 840,
+        -- Should be lower than Max.
+        -- x1.2 when starting with Cowardly trait. Minimum=1 Maximum=100000 Default=3000
+        EarnBraveZombMIN = 3000,
+        -- Should be higher than Min.
+        -- x1.2 when starting with Cowardly trait. Minimum=1 Maximum=100000 Default=4500
+        EarnBraveZombMAX = 4500,
+        -- Should be lower than Max. 1 day = 24
+        -- x1.2 when starting with Cowardly trait.
+        -- x0.8 when starting with Brave trait. Minimum=1 Maximum=100000 Default=1176
+        EarnDesensitizedHoursMIN = 1176,
+        -- Should be higher than Min. 1 day = 24
+        -- x1.2 when starting with Cowardly trait.
+        -- x0.8 when starting with Brave trait. Minimum=1 Maximum=100000 Default=1512
+        EarnDesensitizedHoursMAX = 1512,
+        -- Should be lower than Max.
+        -- x1.2 when starting with Cowardly trait.
+        -- x0.8 when starting with Brave trait. Minimum=1 Maximum=100000 Default=6000
+        EarnDesensitizedZombMIN = 6000,
+        -- Should be higher than Min.
+        -- x1.2 when starting with Cowardly trait.
+        -- x0.8 when starting with Brave trait. Minimum=1 Maximum=100000 Default=9000
+        EarnDesensitizedZombMAX = 9000,
+        -- Should be lower than Max. 1 day = 24 Minimum=1 Maximum=100000 Default=672
+        LosePacifistHoursMIN = 672,
+        -- Should be higher than Min. 1 day = 24 Minimum=1 Maximum=100000 Default=1008
+        LosePacifistHoursMAX = 1008,
+        -- Should be lower than Max. Minimum=1 Maximum=100000 Default=1500
+        LosePacifistZombMIN = 1500,
+        -- Should be higher than Min. Minimum=1 Maximum=100000 Default=2500
+        LosePacifistZombMAX = 2500,
+        -- Any weapon skill but Maintenance and Reloading. Minimum=0 Maximum=10 Default=7
+        LosePacifistSkillLvl = 7,
+    },
+    MIR = {
+        -- Will not add maintenance as a skill to repair recipes for these items. Uses item IDs, not their names. Separate them with ';' for example Axe; HandAxe
+        SkipItems = "",
+        -- Will not add maintenance as a skill to repair recipes that already have one of the specified skills. Uses skill names. Separate them with ';' for example Aiming: Mechanics
+        SkipSkills = "Mechanics;Aiming",
+        SkipFixers = "",
+    },
+    FWOFitness = {
+        -- Take the inital perk bonus into account (75% 100% 125%)
+        InitialPerkBonus = true,
+        -- Get a bonus for the current excercise depending on the regularity
+        currentExerciseRegularityBonus = true,
+        -- The 0 point for the linear calculation Minimum=0 Maximum=100 Default=25
+        currentExerciseOffset = 25,
+        -- The steepness of the linear angle (higher number = higher multiplier)(and higher negatives with offset) Minimum=0.01 Maximum=100.00 Default=5.00
+        currentExerciseRate = 5.0,
+        -- Get a bonus depending on the average of all your excercises regularity Minimum=0.00 Maximum=100.00 Default=6.00
+        AverageExerciseRegularityBonus = 6.0,
+        -- How much multiplier you get per perk level Minimum=0.00 Maximum=100.00 Default=0.30
+        LevelBonus = 0.3,
+        -- Get an exp buff when you space out excercises (about 8hr or when muscle soreness sets in) independent for fitness and strength
+        SpaceOutExercise = true,
+        -- Minimum=0.00 Maximum=100.00 Default=0.90
+        SpaceOutExerciseNegative = 0.9,
+        -- Get an exp debuff when you have muscle soreness, buff when 'rested' (no muscle soreness)
+        RestedBonus = true,
+        -- Minimum=0.00 Maximum=10.00 Default=0.90
+        RestedBonusNegative = 0.9,
+        -- Global exp multiplier (makes you earn experience faster or slower, small increments recommanded) Minimum=0.01 Maximum=10.00 Default=1.00
+        XPMultiplier = 1.0,
+        -- Determens how much multiplier you get outside of doing exercises. EG. fighting,sprinting,...  (0 = OFF No passive exp multiplier) Minimum=0.00 Maximum=10.00 Default=1.00
+        PassiveMultiplier = 1.0,
+        -- adjust Boredom reduction gained (0 = off) Minimum=0.00 Maximum=10.00 Default=1.00
+        BoredomMultiplier = 1.0,
+        -- adjust Unhappyness reduction gained (0 = off) Minimum=0.00 Maximum=10.00 Default=1.00
+        UnhappynessMultiplier = 1.0,
+        DropBags = false,
+        KeepBagsOn = false,
+    },
+    FWOWorkingTreadmill = {
+        -- Minimum=0.00 Maximum=100.00 Default=1.00
+        StrengthXPMultiply = 1.0,
+        -- Minimum=0.00 Maximum=100.00 Default=1.00
+        SprintingXPMultiply = 1.0,
+        TreadmillDropBags = false,
+        BenchpressDropBags = false,
+        BenchTreadKeepBagsOn = false,
+    },
+    AnTi = {
+        -- Admin names, separated by ';'
+        AdminName = "admin;Void",
+        EnAbleBrushToolProtect = true,
+        EnAbleItemListProtect = true,
+        EnAbleCheatMenutProtect = true,
+        EnAblePlayerMenuProtect = true,
+        -- Kick warned player
+        KickWarnPlayer = false,
+        -- Players whose permissions are not Admin will be warned after enabling this option. Enabling this option may cause the module to become invincible and cause warnings.
+        EnAbleGodModProtect = true,
+        -- Players whose permissions are not Admin will be warned after enabling this option. Enabling this option may cause the module to become invincible and cause warnings.
+        EnAbleGhostModProtect = false,
+        -- Players whose permissions are not Admin will be warned after enabling it.
+        EnAbleInfiniteModProtect = true,
+        -- Players whose permissions are not Admin will be warned after enabling it.
+        EnAbleBuildProtect = true,
+        -- Players whose permissions are not Admin will be warned after enabling it.
+        EnAbleInfiniteCarryProtect = true,
+        -- Players whose permissions are not Admin will be warned after enabling it.
+        EnAbleUnlimitedEnduranceProtect = true,
+        -- Players whose permissions are not Admin will be warned after enabling it.
+        EnAbleNoClipProtect = true,
+        EnAbleFastMoveProtect = true,
+        EnAbleHealthCheatProtect = true,
+        EnAbleMechanicsCheatProtect = true,
+    },
+    BTSE = {
+        -- Logs to the server in the directory Zomboid/Lua/btse_tile_protect/
+        LogMovableActions = true,
+        LogIllegalStatsPanelAccess = true,
+        -- Minimum=1.00 Maximum=100.00 Default=40.00
+        FattyMaxWeight = 40.0,
+        FattyWearTranslationList = "ContextMenu_Wear",
+        FattyActionTranslationList = "ContextMenu_ForwardCap;ContextMenu_ReverseCap;ContextMenu_FannyPack_WearFront;ContextMenu_FannyPack_WearBack;ContextMenu_UpHoodie;ContextMenu_DownHoodie;ContextMenu_EyeRight;ContextMenu_EyeLeft;ContextMenu_OpenJacket;ContextMenu_CloseJacket;ContextMenu_OpenHoodUp;ContextMenu_OpenHoodDown;ContextMenu_CloseHoodUp;ContextMenu_CloseHoodDown;ContextMenu_TuckIn;ContextMenu_TuckOut;ContextMenu_RollUp;ContextMenu_RollDown;ContextMenu_OpenRollUp;ContextMenu_OpenRollDown;ContextMenu_CloseRollUp;ContextMenu_CloseRollDown;ContextMenu_TieOnWaist",
+        -- Can be used to compile vehicle stripper statistics. The log file is parp_misc/vehicle_part_installs.log
+        LogVehiclePartInstalls = false,
+        -- Minimum=1 Maximum=180 Default=60
+        AFKKickTimeMins = 60,
+        SafezoneBtnModPlus = false,
+        RestrictFMemberCount = false,
+        -- Minimum=1 Maximum=100 Default=10
+        DefaultFMemberCount = 10,
+        -- Faction name:count;Another faction name:count
+        IndividualFMemberCount = "",
+        -- If you enter coordinates here, user side safehouse claim context menus are disabled in the chosen areas. Format: x1,y1:x2,y2;x3,y3:x4,y4 (...) where you draw an imaginary line between point x1,y1 and x2,y2 for a rectangle that is not claimable. You can add as many as you want by separating them with a semicolon (here x3,y3 / x4,y4).
+        ClaimSHCoordsBlacklist = "",
+    },
+    PARP = {
+        -- The log entries are kept in parp_misc/debug_admin_hide.log
+        LogHideDebugAdminBtns = true,
+        -- This will create a logfile on the server for each item spawned. The file is: Lua/parp_misc/item_spawn.log
+        LogStaffItemSpawns = false,
+        DetectAndHideDebugAdminBtns = true,
+        CloseIllegalStatsPanelAccess = true,
+        -- Logs to the file parp_misc/vehicle_script_mismatch.log
+        LogVehicleScriptMismatch = false,
+        AdminOnlyAdminUIOptions = "SANDBOX;CLIMATE",
+        PreventSafezoneTowing = true,
+        DumpLoadoutsOnDeath = true,
+        EnableAFKKick = false,
+        MultipleSafehouses = true,
+        NoCreatingTickets = false,
+        -- You can insert a fixed text or a translation key in here
+        NoCreatingTicketsTxt = "IGUI_BTSE_T_TicketsDisabled",
+        SaveOrgVehicleScript = true,
+        RemoveMismatchedVehicles = false,
+        -- You can find them under parp_misc/vehicle_locations/vehicleScriptName/vehicleSqlId.txt
+        SaveVehicleLocations = false,
+        -- Use full vehicle script names and a list of skin indices (beginning with 0, not 1!) separated by commas. Entries can be separated by semicolons. Example: Base.83amgeneralM923:2,5;Base.92nissanGTR:1
+        ProhibitedSkinsByScript = "",
+        SuperGenerators = true,
+    },
+    RVInterior = {
+        -- Zombies this distance or closer to a player will prevent them from entering vehicle interiors (0 = disabled). Minimum=0 Maximum=100 Default=20
+        SafeZombieDistance = 20,
+        -- Zombies currently chasing the player will prevent them from entering vehicle interiors, no matter the distance.
+        NotWhenChased = true,
     },
 }
