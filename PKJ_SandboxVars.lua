@@ -2901,7 +2901,7 @@ SandboxVars = {
         -- The steepness of the linear angle (higher number = higher multiplier)(and higher negatives with offset) Minimum=0.01 Maximum=100.00 Default=5.00
         currentExerciseRate = 5.0,
         -- Get a bonus depending on the average of all your excercises regularity Minimum=0.00 Maximum=100.00 Default=6.00
-        AverageExerciseRegularityBonus = 6.0,
+        AverageExerciseRegularityBonus = 15.0,
         -- How much multiplier you get per perk level Minimum=0.00 Maximum=100.00 Default=0.30
         LevelBonus = 0.3,
         -- Get an exp buff when you space out excercises (about 8hr or when muscle soreness sets in) independent for fitness and strength
