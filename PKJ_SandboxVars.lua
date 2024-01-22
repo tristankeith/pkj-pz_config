@@ -2954,7 +2954,7 @@ SandboxVars = {
         -- Players whose permissions are not Admin will be warned after enabling it.
         EnAbleUnlimitedEnduranceProtect = true,
         -- Players whose permissions are not Admin will be warned after enabling it.
-        EnAbleNoClipProtect = false,
+        EnAbleNoClipProtect = true,
         EnAbleFastMoveProtect = true,
         EnAbleHealthCheatProtect = true,
         EnAbleMechanicsCheatProtect = true,
