@@ -185,7 +185,7 @@ SandboxVars = {
     -- Number of days until 100% growth. -1 means no growth. Zero means use the Erosion Speed option. Maximum 36,500 (100 years). Minimum=-1 Maximum=36500 Default=0
     ErosionDays = 0,
     -- Modifies the base XP gain from actions by this number. Minimum=0.00 Maximum=1000.00 Default=1.00
-    XpMultiplier = 2.0,
+    XpMultiplier = 5.0,
     -- Determines if the XP multiplier affects passively levelled skills eg. Fitness and Strength.
     XpMultiplierAffectsPassive = true,
     -- Use this to multiply or reduce engine general loudness. Minimum=0.00 Maximum=100.00 Default=1.00
@@ -2901,7 +2901,7 @@ SandboxVars = {
         -- The steepness of the linear angle (higher number = higher multiplier)(and higher negatives with offset) Minimum=0.01 Maximum=100.00 Default=5.00
         currentExerciseRate = 5.0,
         -- Get a bonus depending on the average of all your excercises regularity Minimum=0.00 Maximum=100.00 Default=6.00
-        AverageExerciseRegularityBonus = 10.0,
+        AverageExerciseRegularityBonus = 6.0,
         -- How much multiplier you get per perk level Minimum=0.00 Maximum=100.00 Default=0.30
         LevelBonus = 0.3,
         -- Get an exp buff when you space out excercises (about 8hr or when muscle soreness sets in) independent for fitness and strength
