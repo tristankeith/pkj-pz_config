@@ -3011,4 +3011,27 @@ SandboxVars = {
         -- Zombies currently chasing the player will prevent them from entering vehicle interiors, no matter the distance.
         NotWhenChased = true,
     },
+    MoreTraits = {
+        -- Minimum=1 Maximum=100 Default=10
+        WeightPackMule = 10,
+        -- Minimum=1 Maximum=100 Default=8
+        WeightDefault = 8,
+        -- Minimum=-100 Maximum=100 Default=0
+        WeightGlobalMod = 0,
+        -- Minimum=5 Maximum=60 Default=10
+        SuperImmuneMinDays = 10,
+        -- Minimum=5 Maximum=60 Default=30
+        SuperImmuneMaxDays = 30,
+        SuperImmuneFirstInfectionBonus = true,
+        SuperImmuneWeakness = false,
+        QuickSuperImmune = false,
+    },
+    MoreTraitsDynamic = {
+        PackMuleDynamic = true,
+        -- Minimum=0 Maximum=10 Default=9
+        PackMuleDynamicSkill = 9,
+        SuperImmuneDynamic = true,
+        -- Minimum=0 Maximum=100000 Default=5000
+        SuperImmuneDynamicInfectionTime = 5000,
+    },
 }
