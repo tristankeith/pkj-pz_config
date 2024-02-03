@@ -2534,7 +2534,7 @@ SandboxVars = {
     SleepWithFriends = {
         -- Choose if Sleep Length is being set to real-time minutes or in-game hours. Default=Real-Time Minutes
         -- 1 = Real-Time Minutes
-        RTorIG = 2,
+        RTorIG = 1,
         -- Average time spent sleeping when fully fatigued.
         SleepLength = "2.0",
         -- Determines how fast endurance is recovered while sleeping. 1 is the same rate as fatigue, 1.5 is one and a half times as fast, 2 is twice as fast, etc.
