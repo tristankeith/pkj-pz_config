@@ -1320,7 +1320,7 @@ SandboxVars = {
         -- 8 = 70%
         -- 9 = 80%
         -- 10 = 90%
-        EnumCaliber4gShot = 5,
+        EnumCaliber4gShot = 6,
         -- Type
         --  - Reduce or Remove Weapons based on Type / Caliber Ammunition
         --  - This will affect associated Items and Ammo
@@ -1335,7 +1335,7 @@ SandboxVars = {
         -- 8 = 70%
         -- 9 = 80%
         -- 10 = 90%
-        EnumCaliber10gShot = 5,
+        EnumCaliber10gShot = 6,
         -- Type
         --  - Reduce or Remove Weapons based on Type / Caliber Ammunition
         --  - This will affect associated Items and Ammo
@@ -1350,7 +1350,7 @@ SandboxVars = {
         -- 8 = 70%
         -- 9 = 80%
         -- 10 = 90%
-        EnumCaliber12gShot = 5,
+        EnumCaliber12gShot = 6,
         -- Type
         --  - Reduce or Remove Weapons based on Type / Caliber Ammunition
         --  - This will affect associated Items and Ammo
@@ -1365,7 +1365,7 @@ SandboxVars = {
         -- 8 = 70%
         -- 9 = 80%
         -- 10 = 90%
-        EnumCaliber20gShot = 5,
+        EnumCaliber20gShot = 6,
         -- Type
         --  - Reduce or Remove Weapons based on Type / Caliber Ammunition
         --  - This will affect associated Items and Ammo
