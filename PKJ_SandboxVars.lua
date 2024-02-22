@@ -50,7 +50,7 @@ SandboxVars = {
     -- 9 = September
     -- 10 = October
     -- 11 = November
-    StartMonth = 5,
+    StartMonth = 11,
     StartDay = 1,
     -- Default=9 AM
     -- 1 = 7 AM
@@ -81,9 +81,9 @@ SandboxVars = {
     -- 7 = 2-6 Months
     ElecShut = 2,
     -- Minimum=-1 Maximum=2147483647 Default=14
-    WaterShutModifier = 14,
+    WaterShutModifier = 25,
     -- Minimum=-1 Maximum=2147483647 Default=14
-    ElecShutModifier = 14,
+    ElecShutModifier = 20,
     -- Default=Rare
     -- 1 = None (not recommended)
     -- 2 = Insanely Rare
@@ -418,7 +418,7 @@ SandboxVars = {
     -- 2 = Very Low
     -- 3 = Low
     -- 4 = Normal
-    CarSpawnRate = 3,
+    CarSpawnRate = 4,
     -- Governs the chances of finding vehicles with gas in the tank. Default=Low
     -- 1 = Low
     -- 2 = Normal
@@ -500,7 +500,7 @@ SandboxVars = {
     Map = {
         AllowMiniMap = true,
         AllowWorldMap = true,
-        MapAllKnown = false,
+        MapAllKnown = true,
     },
     ZombieLore = {
         -- Controls the zombie movement rate. Default=Fast Shamblers
@@ -679,7 +679,7 @@ SandboxVars = {
         -- 8 = 70%
         -- 9 = 80%
         -- 10 = 90%
-        EnumEjectSpentCasings = 11,
+        EnumEjectSpentCasings = 2,
         -- Emergency Reload
         --  - Select the Condition(s) to Drop magazine to the Ground
         --  - Instead of placing one magazine back to inventory before inserting the next
@@ -687,7 +687,7 @@ SandboxVars = {
         -- 1 = NEVER [Retain] Always
         -- 2 = Manual [Drop] on Second Press
         -- 3 = Always [Drop] on Running
-        EnumEmergencyReload = 2,
+        EnumEmergencyReload = 1,
         -- Auto-Select Magazine Type
         --  - When Enabled, the next Magazine Type will be set when all current Mag Type are empty
         --  - When In-Game, [Mag-Type_1 Hot-Key] will Toggle this option
@@ -1380,7 +1380,7 @@ SandboxVars = {
         -- 8 = 70%
         -- 9 = 80%
         -- 10 = 90%
-        EnumCaliber3006SPG = 4,
+        EnumCaliber3006SPG = 2,
         -- Type
         --  - Reduce or Remove Weapons based on Type / Caliber Ammunition
         --  - This will affect associated Items and Ammo
@@ -1485,7 +1485,7 @@ SandboxVars = {
         -- 8 = 70%
         -- 9 = 80%
         -- 10 = 90%
-        EnumCaliber45LC410g = 3,
+        EnumCaliber45LC410g = 1,
         -- Type
         --  - Reduce or Remove Weapons based on Type / Caliber Ammunition
         --  - This will affect associated Items and Ammo
@@ -2497,7 +2497,7 @@ SandboxVars = {
         -- 3 = GM
         -- 4 = Overseer
         -- 5 = Moderator
-        BuildingPermission = 1,
+        BuildingPermission = 6,
     },
     ObviousCollecting = {
         -- If enabled, Players won't receive any items from picking up obvious stuff. 
@@ -2547,7 +2547,7 @@ SandboxVars = {
         -- Minimum=1 Maximum=1000000 Default=500
         SpawnChance = 10000,
         -- Minimum=0 Maximum=100 Default=100
-        LootChance = 50,
+        LootChance = 25,
         -- Minimum=0 Maximum=100 Default=0
         LootChanceZomboxycycline = 0,
     },
@@ -2921,7 +2921,7 @@ SandboxVars = {
         -- adjust Unhappyness reduction gained (0 = off) Minimum=0.00 Maximum=10.00 Default=1.00
         UnhappynessMultiplier = 1.0,
         DropBags = false,
-        KeepBagsOn = false,
+        KeepBagsOn = true,
     },
     FWOWorkingTreadmill = {
         -- Minimum=0.00 Maximum=100.00 Default=1.00
@@ -2930,7 +2930,7 @@ SandboxVars = {
         SprintingXPMultiply = 1.0,
         TreadmillDropBags = false,
         BenchpressDropBags = false,
-        BenchTreadKeepBagsOn = false,
+        BenchTreadKeepBagsOn = true,
     },
     AnTi = {
         -- Admin names, separated by ';'
@@ -3012,26 +3012,375 @@ SandboxVars = {
         NotWhenChased = true,
     },
     MoreTraits = {
-        -- Minimum=1 Maximum=100 Default=10
+        -- The amount of bandages given by the Prepare Medical trait. Minimum=1 Maximum=999 Default=4
+        PreparedMedicalBandageAmount = 4,
+        -- Players who choose the Prepared: Cars trait start with a gas can.
+        PreparedCarGasToggle = false,
+        -- Whether or not players who take the Injured trait can receive burns as a random injury.
+        -- Burns can be extremely debilitating especially if on the legs.
+        InjuredBurns = true,
+        -- Players who take the Alcoholic trait start with a free bottle of alcohol.
+        AlcoholicFreeDrink = false,
+        SmokerStart = false,
+        -- The percent degree to which Lucky and Unlucky traits affect traits from this mod.
+        -- 0% means lucky and unlucky have no effect on traits. Minimum=0 Maximum=200 Default=100
+        LuckImpact = 150,
+        -- How many hours (on average) should an alcoholic need to drink to sate their need?
+        -- Lower values mean Alcoholics need to drink frequently to avoid withdrawal. Minimum=1 Maximum=720 Default=24
+        AlcoholicFrequency = 24,
+        -- After how many hours without alcohol should an alcoholic start suffering withdrawal symptoms?
+        -- This value should be higher than Alcoholic Drink Frequency. Minimum=1 Maximum=720 Default=72
+        AlcoholicWithdrawal = 72,
+        -- The percent value that XP is reduced by for those who take a Specialization trait.
+        -- Set to 0% to disable XP reduction. Minimum=0 Maximum=90 Default=75
+        SpecializationXPPercent = 0,
+        -- The percent chance that a player who has the Bouncer trait will trigger its effect.
+        -- This is rolled every tick, so 60 times/second for as long as the player has at least two or more zombies near them.
+        -- Increasing this value by even a small amount can dramatically overpower Bouncer. Minimum=1 Maximum=100 Default=5
+        BouncerEffectiveness = 10,
+        -- How many ticks between Bouncer shoves.
+        -- 60 ticks = 1 second
+        -- Reducing this value can dramatically overpower Bouncer. Minimum=1 Maximum=240 Default=60
+        BouncerCooldown = 60,
+        -- The distance (in tile squares) from the player out to which Bouncer begins attempting to shove enemies away. 
+        -- Lower values means Bouncer will take effect only at closer ranges to the player. Minimum=0.25 Maximum=5.00 Default=1.75
+        BouncerDistance = 1.75,
+        -- The percent amount extra Fitness/Strength XP a player receives from working out if they have the Gym Goer trait.
+        -- Setting this to 100% means no extra XP is gained. Minimum=100 Maximum=1000 Default=200
+        GymGoerPercent = 300,
+        -- Should Gym Goer affect Exercise Fatigue?
+        -- If this option is un-checked, players with Gym Goer will suffer from exercise fatigue as normal.
+        GymGoerNoExerciseFatigue = true,
+        -- If true, Indefatigable trait can be used only once per character.
+        -- If false, it will recharge based on the option below.
+        -- Note: If false, it will cure zombification only once.
+        IndefatigableOneUse = true,
+        -- After how many in-game days should the indefatigable ability recharge?
+        -- Note: This option will only work if "Indefatigable One Use" option is disabled. Minimum=7 Maximum=30 Default=7
+        IndefatigableRecharge = 7,
+        -- A percent value representing how effective the Gordanite trait makes players with Crowbars.
+        -- Setting this to 200% will make Gordanite twice as powerful. Minimum=0 Maximum=1000 Default=100
+        GordaniteEffectiveness = 150,
+        -- A percent value representing how strong the scaling in damage for Martial Artist is.
+        -- Setting this to 50% would halve all damage. Minimum=25 Maximum=1000 Default=100
+        MartialScaling = 150,
+        -- If this is enabled, knocking down zombies with Battering Ram trait will damage them if you have Martial Artist trait.
+        BatteringRamMartialCombo = true,
+        -- The percent chance that a player with the Evasive trait will dodge an attack.
+        -- Setting this to 100% will make players with Evasive immune to zombies. Minimum=0 Maximum=100 Default=33
+        EvasiveChance = 50,
+        -- If enabled, Evasive has no "being hit" animation when it activates
+        EvasiveAnimation = true,
+        -- If true, Evasive can dodge attacks from other players.
+        EvasiveBlocksPVP = true,
+        -- The chance in X how frequently a player with Butterfingers will drop an item.
+        -- The base chance is 5, so by default this value would be a 5/2000 chance calculated every in-game minute.
+        -- Lowering this value could result in players constantly dropping their items. Minimum=100 Maximum=10000 Default=2000
+        ButterfingersChance = 2000,
+        -- The % chance that a player with the Grave Robber trait will find extra loot on a zombie corpse. Chance is rounded down to nearest 0.1% Minimum=0.10 Maximum=100.00 Default=1.00
+        GraveRobberChance = 0.8,
+        -- How much guaranteed extra loot will Grave Robber's find on zombie corpses?
+        -- By default, a random value is determined. Increasing this value guarantees extra loot whenever loot is rolled. Minimum=0 Maximum=10 Default=1
+        GraveRobberGuaranteedLoot = 1,
+        -- A percent value representing the chance that a player with the Scrounger trait will find extra loot in any container.
+        -- 100% would make every container have extra loot. Minimum=1 Maximum=100 Default=20
+        ScroungerChance = 10,
+        -- A percent value representing how likely any item in a container is to be duplicated by Scrounger.
+        -- For example: Scrounger Chance is the percent chance that any given container will potentially have extra loot in it.
+        -- Once a container passes this initial check, another series of checks is run - for every single item inside that container, a die is rolled to determine if that item is duplicated.
+        -- If for instance, this value is set to 100%, then whenever Scrounger is triggered, the entire contents of that container will be duplicated.
+        -- If Scrounger Chance, and Scrounger Item Chance are both 100%, then anyone with the Scrounger trait will find double the loot in every container. Minimum=1 Maximum=100 Default=10
+        ScroungerItemChance = 10,
+        -- A percent value representing how much extra loot players with the Scrounger trait will find when Scrounger triggers.
+        -- 100% would double the amount of extra loot players find.
+        -- This value always rounds up, so even a single item can potentially be doubled.
+        -- This effect is most noticed in stacks of items such as cigarettes or ammunition. Minimum=10 Maximum=1000 Default=30
+        ScroungerLootModifier = 20,
+        -- A percent value representing the chance that a player with the Incomprehensive trait will find fewer items in any container.
+        -- Setting this to 100% would make every container lose some items. Minimum=1 Maximum=100 Default=10
+        IncomprehensiveChance = 10,
+        -- A percent value representing the chance that a player with the Vagabond trait will find extra food in a garbage bin.
+        -- Setting this to 100% would make every trash bin contain extra food. Minimum=1 Maximum=100 Default=33
+        VagabondChance = 20,
+        -- How many extra food items is a player with the Vagabond trait guaranteed to find in a garbage bin?
+        -- By default, a random value between 0 and 2 is selected. This value adds to that range.
+        -- (eg; roll a random number between 0 and 2 and then add x, where x is this value.) Minimum=0 Maximum=10 Default=1
+        VagabondGuaranteedExtraLoot = 1,
+        -- Defines the base inventory carry capacity for those who take the Pack Mule trait.
+        -- This is the base value before applying bonuses from Strength. Minimum=1 Maximum=100 Default=10
         WeightPackMule = 10,
-        -- Minimum=1 Maximum=100 Default=8
+        -- Defines the base inventory carry capacity for those who take the Pack Mouse trait.
+        -- This is the base value before applying bonuses from Strength. Minimum=1 Maximum=100 Default=6
+        WeightPackMouse = 6,
+        -- Defines the base inventory carry capacity for players with neither Pack Mule nor Pack Mouse traits.
+        -- This is the base value before applying bonuses from Strength. Minimum=1 Maximum=100 Default=8
         WeightDefault = 8,
-        -- Minimum=-100 Maximum=100 Default=0
+        -- Gives bonus inventory carry capacity to all players.
+        -- You can set a negative value to reduce all player inventory capacity globally as well. Minimum=-100 Maximum=100 Default=0
         WeightGlobalMod = 0,
-        -- Minimum=5 Maximum=60 Default=10
-        SuperImmuneMinDays = 10,
-        -- Minimum=5 Maximum=60 Default=30
-        SuperImmuneMaxDays = 30,
-        SuperImmuneFirstInfectionBonus = true,
+        -- How much extra time is added to TimedActions being performed by players with the Quick Worker trait.
+        -- Higher values make TimedActions perform more rapidly.
+        -- This is a fine granular value with 100 translating to a 0.1 (10%) increase in speed. Minimum=1 Maximum=1000 Default=100
+        QuickWorkerScaler = 80,
+        -- How much longer it takes to perform TimedActions.
+        -- Higher values make TimedActions perform more slowly.
+        -- Setting this too high can make it excruciatingly slow to do any actions - especially reading books. Minimum=5 Maximum=50 Default=15
+        SlowWorkerScaler = 15,
+        -- Limit the amount of free recipes granted by Ingenuitive?
+        -- By default, all recipes are taught for players who have Ingenuitive.
+        -- Turning this on allows you to limit how much they learn instead.
+        IngenuitiveLimit = false,
+        -- What percent of unknown recipes should be learned by Ingenuitive?
+        -- This is randomly chosen out of all available recipes. Minimum=5 Maximum=95 Default=50
+        IngenuitiveLimitAmount = 50,
+        -- By default, Martial Artist will only deal damage if the player is unarmed.
+        -- If enabled, players' shoves will still deal damage even if they are wielding a weapon.
+        -- If this option is disabled, you can still benefit from Martial Artist with an item in your Secondary slot (Flashlight, Bag, etc). It only checks if the Primary slot is equipped.
+        MartialWeapons = true,
+        -- How rare Antique Collector items are.
+        -- This value is representative of a 1 in X roll.
+        -- Higher values mean drops happen less frequently. Minimum=100 Maximum=10000 Default=1500
+        AntiqueChance = 1500,
+        -- If true, Antique Collector trait will be able to find antique items anywhere, instead of only in crates and metal shelves.
+        AntiqueAnywhere = false,
+        -- Players who take the Deprived trait will still be allowed to keep a belt.
+        -- Belts are ordinarily difficult to obtain through normal play without killing other players or mods which add them to loot tables.
+        ForgivingDeprived = false,
+        -- Players who take the alcoholic trait can never die from alcohol poisoning, but will still suffer periodic withdrawal.
+        NonlethalAlcoholic = false,
+        -- After how much days should Second Wind recharge? Minimum=1 Maximum=30 Default=14
+        SecondWindCooldown = 7,
+        -- How much extra endurance should hardy give? Minimum=5 Maximum=50 Default=25
+        HardyEndurance = 25,
+        -- Minimum days that a Super Immune character takes to heal the sickness. Minimum=5 Maximum=60 Default=10
+        SuperImmuneMinDays = 5,
+        -- Maximum days that a Super Immune character takes to heal the sickness. Minimum=5 Maximum=60 Default=30
+        SuperImmuneMaxDays = 7,
+        -- If true, any infections after the first one was cured will only last half as long.
+        -- Note: If caught multiple infections, it can still reach maximum days.
+        SuperImmuneFirstInfectionBonus = false,
+        -- If this setting is on, Super Immune will not be able to defend your body if it caught several infections.
         SuperImmuneWeakness = false,
+        -- If true, Super Immune is 6 times faster than normal.
+        -- Preferably used in multiplayer games where you can't fast forward time.
         QuickSuperImmune = false,
+        -- Chance for a player with Immunocompromised to get infected by a zombie attack.
+        -- Setting this value to 100 will make every zombie attack infectious. Minimum=0 Maximum=100 Default=25
+        ImmunoChance = 25,
+        -- If true, Prowess: Guns will have a chance to not consume ammo. Not exactly lore-wise friendly, but fun.
+        ProwessGunsAmmoRestore = false,
+        -- If you run both More Traits and Expended Traits, they both have perks that update carry weight.
+        -- If this is checked on, Hoarder (from Expended Traits) and carry weight from this mod (Pack Mule/Mouse) will stack. Which means that whatever carry weight you get with Pack Mule/Pack Mouse will be multiplied by 1.25.
+        -- If this is checked off, and you have both perks (Hoarder and Pack Mule/Mouse) either Hoarder or Pack Mouse/Mule will run its code first meaing I honestly don't know if your max weight will be calculated by Hoarder code or Pack Mule code
+        HoarderCompatibility = true,
+        -- Distance at which Burn Ward Patient gets activated by fire.
+        -- Keep in mind, the higher this value is, the more panic and anxiety you will get from being close.
+        -- Warning: Higher values might lead to FPS issues Minimum=5 Maximum=50 Default=20
+        BurnedDistance = 30,
+        -- Panic you will get from Burn Ward Patient.<Br>Scaling works by repeatedly adding panic until max distance number is reached, starting from distance of closest fire.
+        -- What this means is, if fire is 1 tile away and max is 20, it will give 20x panic than this number. This happens every one minute in-game. Minimum=1 Maximum=10 Default=1
+        BurnedPanic = 5,
+        -- Stress you will get from Burn Ward Patient.<Br>Scaling works by repeatedly adding stress until max distance number is reached, starting from distance of closest fire.
+        -- What this means is, if fire is 1 tile away and max is 20, it will give 20x stress than this number. This happens every one minute in-game. Minimum=1 Maximum=10 Default=1
+        BurnedStress = 3,
     },
     MoreTraitsDynamic = {
+        AntiGunActivistDynamic = false,
+        -- Minimum=0 Maximum=10 Default=6
+        AntiGunActivistDynamicSkill = 6,
+        -- Firearms Minimum=0 Maximum=100000 Default=600
+        AntiGunActivistDynamicKill = 600,
+        -- Requires scavenging skill mod, otherwise always static
+        AntiqueCollectorDynamic = false,
+        -- Minimum=0 Maximum=10 Default=10
+        AntiqueCollectorDynamicSkill = 10,
+        AsceticDynamic = true,
+        -- Minimum=0 Maximum=10 Default=5
+        AsceticDynamicSkill = 5,
+        BouncerDynamic = true,
+        -- Minimum=0 Maximum=10 Default=7
+        BouncerDynamicSmallBlunt = 7,
+        -- Minimum=0 Maximum=10 Default=7
+        BouncerDynamicStrength = 7,
+        EvasiveDynamic = true,
+        -- Fitness + Sprinting + Lightfoot + Nimble + Sneak Minimum=0 Maximum=50 Default=40
+        EvasiveDynamicSkill = 40,
+        FastDynamic = true,
+        -- Sprinting + Lightfoot + Nimble + Sneak Minimum=0 Maximum=40 Default=30
+        FastDynamicSkill = 30,
+        FastWorkerDynamic = true,
+        -- Carpentry + Cooking + Farming + First Aid + electrical + Metalworking + Mechanics + Tailoring Minimum=0 Maximum=80 Default=60
+        FastWorkerDynamicSkill = 40,
+        FlexibleDynamic = true,
+        -- Minimum=0 Maximum=10 Default=4
+        FlexibleDynamicSkill = 5,
+        GordaniteDynamic = true,
+        -- Minimum=0 Maximum=10 Default=6
+        GordaniteDynamicSkill = 6,
+        -- Long Blunt Minimum=0 Maximum=100000 Default=300
+        GordaniteDynamicKill = 300,
+        GourmandDynamic = true,
+        -- Minimum=0 Maximum=10 Default=9
+        GourmandDynamicSkill = 9,
+        -- Requires scavenging skill mod, otherwise always static
+        GraverobberDynamic = true,
+        -- Minimum=0 Maximum=10 Default=8
+        GraverobberDynamicSkill = 0,
+        -- Minimum=0 Maximum=100000 Default=1000
+        GraverobberDynamicKill = 2000,
+        GruntWorkerDynamic = true,
+        -- Minimum=0 Maximum=10 Default=4
+        GruntWorkerDynamicSmallBlunt = 6,
+        -- Minimum=0 Maximum=10 Default=5
+        GruntWorkerDynamicWoodwork = 6,
+        -- Short blunt Minimum=0 Maximum=100000 Default=200
+        GruntWorkerDynamicKill = 100,
+        GymGoerDynamic = true,
+        -- Strength + Fitness Minimum=0 Maximum=20 Default=14
+        GymGoerDynamicSkill = 16,
+        HardyDynamic = true,
+        -- Minimum=0 Maximum=10 Default=7
+        HardyDynamicSkill = 7,
+        IdealWeightDynamic = false,
+        -- How many days you have to keep your weight between 78 and 82 to earn the trait. Check is made every in-game hour. Minimum=0 Maximum=100000 Default=21
+        IdealWeightDynamicTargetDaysToObtain = 21,
+        -- How many hours you can be not between 78-82 weight while earning the trait and not reset your progress. Check is made every in-game hour. Minimum=0 Maximum=100000 Default=24
+        IdealWeightDynamicObtainGracePeriod = 24,
+        -- How fast you earn 'grace period' hours that later are used up before you lose the trait if you're not between 75-85 weight. Default multiplier of 1 earns you 1 grace period hour for every 12h of keeping weight 78-82 (Basically 0.0834 grace hours for each 1h). Higher multiplier = faster gain of grace hours. Lower multiplier = slower gain of grace hours. Minimum=0.00 Maximum=100.00 Default=1.00
+        IdealWeightDynamicLoseGracePeriodMultiplier = 1.0,
+        -- How many hours can you 'earn' on counter that later will be used before you lose your Ideal Weight trait if your weight is not between 75-85 Minimum=0 Maximum=100000 Default=18
+        IdealWeightDynamicLoseGracePeriodCap = 18,
+        ImmunocompromisedDynamic = true,
+        -- How many hours does wounds on your body need to be infected for to loose Immunocompromised. Each body part is counted separately so if you have 3 infected wounds, you'd earn +3 to the counter in 1h. Minimum=0 Maximum=100000 Default=2000
+        ImmunocompromisedDynamicInfectionTime = 2000,
+        -- Requires scavenging skill mod, otherwise always static
+        IncomprehensiveDynamic = false,
+        -- Minimum=0 Maximum=10 Default=4
+        IncomprehensiveDynamicSkill = 4,
+        IndefatigableDynamic = false,
+        -- Strength + Fitness + Sprinting + Lightfoot + Nimble + Sneak + Axe + Blunt + SmallBlunt + LongBlade + SmallBlade + Spear Minimum=0 Maximum=120 Default=110
+        IndefatigableDynamicSkill = 110,
+        LeadFootDynamic = true,
+        -- Finish zombies by stomping them. Only last hit needs to be stomp Minimum=0 Maximum=50000 Default=200
+        LeadFootDynamicKill = 100,
+        MartialArtistDynamic = true,
+        -- Minimum=0 Maximum=10 Default=6
+        MartialArtistDynamicSmallBlunt = 6,
+        -- Minimum=0 Maximum=10 Default=6
+        MartialArtistDynamicFitness = 6,
+        -- Requires driving skill mod, otherwise always static
+        MotionSickenssDynamic = false,
+        -- Minimum=0 Maximum=10 Default=5
+        MotionSickenssDynamicSkill = 5,
+        MundaneDynamic = true,
+        -- Amount of damage you need to deal to lose the trait. Zombies have between 0-2 hp. Minimum=0 Maximum=500000 Default=5000
+        MundaneDynamicDamage = 5000,
+        NaturalEaterDynamic = true,
+        -- Minimum=0 Maximum=10 Default=2
+        NaturalEaterDynamicCooking = 2,
+        -- Minimum=0 Maximum=10 Default=4
+        NaturalEaterDynamicForaging = 4,
+        NoodleLegsDynamic = true,
+        -- Fitness + Sprinting + Lightfoot + Nimble + Sneak Minimum=0 Maximum=50 Default=30
+        NoodleLegsDynamicSkill = 30,
+        OlympianDynamic = true,
+        -- Minimum=0 Maximum=10 Default=5
+        OlympianDynamicSkillSprinting = 7,
+        -- Minimum=0 Maximum=10 Default=6
+        OlympianDynamicSkillFitness = 7,
+        PackMouseDynamic = true,
+        -- Minimum=0 Maximum=10 Default=7
+        PackMouseDynamicSkill = 5,
         PackMuleDynamic = true,
         -- Minimum=0 Maximum=10 Default=9
-        PackMuleDynamicSkill = 9,
+        PackMuleDynamicSkill = 10,
+        ParanoiaDynamic = true,
+        -- How many hours you need to be panicked and stressed (at same time) above average to get rid of trait Minimum=0 Maximum=100000 Default=200
+        ParanoiaDynamicHoursLose = 200,
+        PracticedSwordsmanDynamic = true,
+        -- Long Blade + Short Blade Minimum=0 Maximum=20 Default=10
+        PracticedSwordsmanDynamicSkill = 10,
+        -- Long Blade + Short Blade Minimum=0 Maximum=100000 Default=500
+        PracticedSwordsmanDynamicKill = 500,
+        ProwessBladeDynamic = true,
+        -- Axe + Short Blade + Long Blade Minimum=0 Maximum=30 Default=24
+        ProwessBladeDynamicSkill = 24,
+        -- Axe + Short Blade + Long Blade Minimum=0 Maximum=100000 Default=1200
+        ProwessBladeDynamicKill = 1200,
+        ProwessBluntDynamic = true,
+        -- Short Blunt + Long Blunt Minimum=0 Maximum=20 Default=16
+        ProwessBluntDynamicSkill = 16,
+        -- Short Blunt + Long Blunt Minimum=0 Maximum=100000 Default=800
+        ProwessBluntDynamicKill = 800,
+        ProwessGunsDynamic = false,
+        -- Minimum=0 Maximum=10 Default=8
+        ProwessGunsDynamicAiming = 10,
+        -- Aiming + Reloading Minimum=0 Maximum=20 Default=16
+        ProwessGunsDynamicSkill = 20,
+        -- Firearm Minimum=0 Maximum=100000 Default=800
+        ProwessGunsDynamicKill = 100000,
+        ProwessSpearDynamic = false,
+        -- Spear Minimum=0 Maximum=10 Default=8
+        ProwessSpearDynamicSkill = 10,
+        -- Spear Minimum=0 Maximum=100000 Default=400
+        ProwessSpearDynamicKill = 100000,
+        QuietDynamic = true,
+        -- Minimum=0 Maximum=10 Default=4
+        QuietDynamicSkill = 5,
+        ScrapperDynamic = true,
+        -- Minimum=0 Maximum=10 Default=5
+        ScrapperDynamicMaintenance = 5,
+        -- Minimum=0 Maximum=10 Default=5
+        ScrapperDynamicMetalWelding = 5,
+        -- Requires scavenging skill mod, otherwise always static
+        ScroungerDynamic = false,
+        -- Minimum=0 Maximum=10 Default=6
+        ScroungerDynamicSkill = 10,
+        SecondWindDynamic = true,
+        -- Strength + Fitness Minimum=0 Maximum=20 Default=18
+        SecondWindDynamicSkill = 20,
+        SlowWorkerDynamic = true,
+        -- Carpentry + Cooking + Farming + First Aid + Electricity + MetalWelding + Mechanics + Tailoring Minimum=0 Maximum=80 Default=30
+        SlowWorkerDynamicSkill = 30,
+        SlowpokeDynamic = true,
+        -- Sprinting + Lightfoot + Nimble + Sneak Minimum=0 Maximum=40 Default=20
+        SlowpokeDynamicSkill = 20,
+        SwiftDynamic = true,
+        -- Minimum=0 Maximum=10 Default=4
+        SwiftDynamicSkill = 4,
         SuperImmuneDynamic = true,
-        -- Minimum=0 Maximum=100000 Default=5000
+        -- How many hours does wounds on your body need to be infected for to earn Super-Immune. Each body part is counted separately so if you have 3 infected wounds, you'd earn +3 to the counter in 1h. Minimum=0 Maximum=100000 Default=5000
         SuperImmuneDynamicInfectionTime = 5000,
+        TavernBrawlerDynamic = true,
+        -- Axe + Short Blunt + Long Blunt + Short Blade + Long Blade Minimum=0 Maximum=60 Default=12
+        TavernBrawlerDynamicSkill = 12,
+        TerminatorDynamic = true,
+        -- Aiming + Reloading + Nimble Minimum=0 Maximum=30 Default=28
+        TerminatorDynamicSkill = 28,
+        -- Firearms Minimum=0 Maximum=100000 Default=1400
+        TerminatorDynamicKill = 2500,
+        ThuggishDynamic = true,
+        -- Long Blunt + Short Blunt Minimum=0 Maximum=20 Default=10
+        ThuggishDynamicSkill = 10,
+        -- Short Blunt + Long Blunt Minimum=0 Maximum=100000 Default=500
+        ThuggishDynamicKill = 500,
+        TinkererDynamic = true,
+        -- Electricity + Mechanics + Tailoring Minimum=0 Maximum=30 Default=12
+        TinkererDynamicSkill = 12,
+        UnwaveringDynamic = true,
+        -- This is internal counter that needs to be reached before you get the trait. Each injury below belt adds to counter every 10 min. Deep Wound > Laceration > Burn/Fracture > Scratch > Bleeding. For example, having burns on 1 bodypart below belt would result in getting around +2.3 on counter in 24h. Having 1 fracture gives around +3 in 24h. Minimum=0 Maximum=100000 Default=500
+        UnwaveringDynamicCounter = 500,
+        -- Requires scavenging skill mod, otherwise always static
+        VagabondDynamic = false,
+        -- Minimum=0 Maximum=10 Default=5
+        VagabondDynamicSkill = 10,
+        WellFittedDynamic = true,
+        -- Minimum=0 Maximum=10 Default=8
+        WellFittedDynamicSkill = 7,
+        WildsmanDynamic = true,
+        -- Foraging + Fishing + Trapping Minimum=0 Maximum=30 Default=8
+        WildsmanDynamicSkill = 8,
+        -- Minimum=0 Maximum=100000 Default=200
+        WildsmanDynamicKill = 200,
     },
 }
