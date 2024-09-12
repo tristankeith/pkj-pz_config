@@ -36,7 +36,6 @@ function SpawnRegions()
 		{ name = "Elysium_Island",                    file = "media/maps/Elysium_Island/spawnpoints.lua" },
 		{ name = "EVAC_Muldraugh",                    file = "media/maps/EVAC_Muldraugh/spawnpoints.lua" },
 		{ name = "Farm house",                        file = "media/maps/Farm house/spawnpoints.lua" },
-		{ name = "MotoriousExpandedSpawnZones",       file = "media/maps/MotoriousExpandedSpawnZones/spawnpoints.lua" },
 		{ name = "Lone",                              file = "media/maps/Lone/spawnpoints.lua" },
 		{ name = "Fort Knox, KY by Woldren",          file = "media/maps/Fort Knox, KY by Woldren/spawnpoints.lua" },
 		{ name = "Fort Rock Ridge",                   file = "media/maps/Fort Rock Ridge/spawnpoints.lua" },
