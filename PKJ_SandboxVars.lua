@@ -2755,15 +2755,15 @@ SandboxVars = {
         LifetimeMult = 1.0,
     },
     Bicycles = {
-        -- Determines whether your character will get tired as they pedal. 
+        -- Determines whether your character will get tired as they pedal.
         Exhaustion = true,
         -- Minimum=0.00 Maximum=1.00 Default=0.39
         ExhaustionDrain = 0.39,
-        -- Determines whether your character will receive fitness exp as they pedal. 
+        -- Determines whether your character will receive fitness exp as they pedal.
         FitnessExperience = true,
         -- Minimum=0 Maximum=500 Default=15
         FitnessExpGain = 15,
-        -- Determines whether your character will warm up from pedaling. 
+        -- Determines whether your character will warm up from pedaling.
         Warmth = true,
         -- Minimum=0.00 Maximum=1.00 Default=0.10
         WarmthGain = 0.1,
@@ -2805,14 +2805,14 @@ SandboxVars = {
         Necromancer = 0,
     },
     CommonSense = {
-        -- Toggles whether Players can pry open doors, windows, etc. using a Crowbar. 
+        -- Toggles whether Players can pry open doors, windows, etc. using a Crowbar.
         PryingMechanic = true,
         -- Toggles whether all doors can be pried open or not.
-        -- By default, reinforced doors (Prison doors, metal grid doors, etc.) cannot be pried open up unless the Player has a Strength level equal to or higher than the Min. Reinforced Door Level. 
+        -- By default, reinforced doors (Prison doors, metal grid doors, etc.) cannot be pried open up unless the Player has a Strength level equal to or higher than the Min. Reinforced Door Level.
         PryAllDoors = false,
-        -- Toggles whether to display a Color representing the Condition of various Vehicle Parts in the Vehicle Dashboard. 
+        -- Toggles whether to display a Color representing the Condition of various Vehicle Parts in the Vehicle Dashboard.
         PartsHighlighter = true,
-        -- Toggles friendly User Interface colors for those affected by color blindness. 
+        -- Toggles friendly User Interface colors for those affected by color blindness.
         ColorFilter = false,
         -- Determines the Minimum level of Strength at which Players can pry open reinforced doors (Prison doors, metal grid doors, etc.) Minimum=0 Maximum=10 Default=8
         ReinforcedDoorLevel = 8,
@@ -2833,12 +2833,12 @@ SandboxVars = {
     },
     DaysGone = {
         -- Displays "Days Later" instead of "Days Gone".
-        -- A reference to the 2002 movie. 
+        -- A reference to the 2002 movie.
         DaysLater = true,
-        -- Includes the Knox Evacuation, 3 days before the game starts, in the day counter. 
+        -- Includes the Knox Evacuation, 3 days before the game starts, in the day counter.
         IncludePreOutbreak = false,
         -- Write some custom text after the day count instead of 'Days Gone'.
-        -- Leave it blank for default. 
+        -- Leave it blank for default.
         CustomText = "NAOLROSS",
         -- Add a custom starting day to the counter.
         -- The mod will calculate current world days + the starting day. Minimum=0 Maximum=1000000 Default=0
@@ -2900,9 +2900,9 @@ SandboxVars = {
         BenchTreadKeepBagsOn = true,
     },
     FirstAidOverhaul = {
-        -- If enabled, when a Player injects Antizin, it will reset their Knox Infection timer (Zombification %) instead of outright curing them. 
+        -- If enabled, when a Player injects Antizin, it will reset their Knox Infection timer (Zombification %) instead of outright curing them.
         AntizinDoesntCure = false,
-        -- Display cheaty info of wounds when at Level 8 or higher. 
+        -- Display cheaty info of wounds when at Level 8 or higher.
         ShowDebugInfo = true,
         -- From this level onward, the Player will be able to treat fractures.  Minimum=0 Maximum=10 Default=1
         FractureTreatmentLevel = 1,
@@ -2952,7 +2952,7 @@ SandboxVars = {
         ScalpelPracticeXP = 75,
         -- Makes wound treatment faster or slower.  Minimum=0.10 Maximum=5.00 Default=1.00
         SpeedMultiplier = 1.0,
-        -- Display cheaty info of wounds when at Level 8 or higher. 
+        -- Display cheaty info of wounds when at Level 8 or higher.
         ShowDebugInfo = true,
     },
     KATTAJ1 = {
@@ -3269,7 +3269,7 @@ SandboxVars = {
         LindenMap = true,
         -- South West of Riverside
         RefordvilleMap = true,
-        --        
+        --
         ChernavilleMap = true,
         -- North of Muldraugh, West of Dixie
         ChinatownMap = true,
@@ -3409,7 +3409,7 @@ SandboxVars = {
         HavenRidgeMap = true,
     },
     ObviousCollecting = {
-        -- If enabled, Players won't receive any items from picking up obvious stuff. 
+        -- If enabled, Players won't receive any items from picking up obvious stuff.
         DisableLoot = false,
         -- Multiplies the amount of items received (If any) by Players when they pick up obvious stuff.  Minimum=0.00 Maximum=100.00 Default=1.00
         LootMultiplier = 1.0,
@@ -3668,17 +3668,17 @@ SandboxVars = {
         LootChanceZomboxycycline = 0,
     },
     TrueCrawl = {
-        -- Use this option only if you're hosting an Local or Dedicated server. (To avoid issues). [Default is False]. 
+        -- Use this option only if you're hosting an Local or Dedicated server. (To avoid issues). [Default is False].
         StealhModeServer = true,
         -- Toggles the Stealth Mode ON or OFF. If OFF, only the vanilla Sneaking system will be used. [Default is True].
         StealhModeEnable = true,
-        -- Toggles the Moodle Stealth Indicator. (Works ONLY if Stealth Mode is ON!) [Default is True]. 
+        -- Toggles the Moodle Stealth Indicator. (Works ONLY if Stealth Mode is ON!) [Default is True].
         MoodleEnable = true,
-        -- Toggles the ability to Crawl under Vehicles. (YOU MUST BE CRAWLING!) [Default is True, Default Key is Shift]. 
+        -- Toggles the ability to Crawl under Vehicles. (YOU MUST BE CRAWLING!) [Default is True, Default Key is Shift].
         CrawlUnderVehiclesEnable = true,
-        -- Toggles the Realistic Endurance mode. This mode improves the game immersion by limiting how much you can crawl. [Default is True]. 
+        -- Toggles the Realistic Endurance mode. This mode improves the game immersion by limiting how much you can crawl. [Default is True].
         RealisticEndurance = true,
-        -- Auto disable the Crawling Pose when spotted by zombies. [Default is False]. 
+        -- Auto disable the Crawling Pose when spotted by zombies. [Default is False].
         CancelCrawlWhenSpotted = false,
         -- This value controls the zombie sight radius when player is crawling. It goes from 1(Extremely Small) to 20(Extremely Far). Default is 5 (Medium Radius). My recommendation is to keep between 5 - 10 to have a more immersive gameplay. Minimum=1 Maximum=20 Default=5
         ZombieRadius = 5,
@@ -3755,7 +3755,8 @@ SandboxVars = {
         -- Minimum=1.00 Maximum=100.00 Default=40.00
         FattyMaxWeight = 40.0,
         FattyWearTranslationList = "ContextMenu_Wear",
-        FattyActionTranslationList = "ContextMenu_ForwardCap;ContextMenu_ReverseCap;ContextMenu_FannyPack_WearFront;ContextMenu_FannyPack_WearBack;ContextMenu_UpHoodie;ContextMenu_DownHoodie;ContextMenu_EyeRight;ContextMenu_EyeLeft;ContextMenu_OpenJacket;ContextMenu_CloseJacket;ContextMenu_OpenHoodUp;ContextMenu_OpenHoodDown;ContextMenu_CloseHoodUp;ContextMenu_CloseHoodDown;ContextMenu_TuckIn;ContextMenu_TuckOut;ContextMenu_RollUp;ContextMenu_RollDown;ContextMenu_OpenRollUp;ContextMenu_OpenRollDown;ContextMenu_CloseRollUp;ContextMenu_CloseRollDown;ContextMenu_TieOnWaist",
+        FattyActionTranslationList =
+        "ContextMenu_ForwardCap;ContextMenu_ReverseCap;ContextMenu_FannyPack_WearFront;ContextMenu_FannyPack_WearBack;ContextMenu_UpHoodie;ContextMenu_DownHoodie;ContextMenu_EyeRight;ContextMenu_EyeLeft;ContextMenu_OpenJacket;ContextMenu_CloseJacket;ContextMenu_OpenHoodUp;ContextMenu_OpenHoodDown;ContextMenu_CloseHoodUp;ContextMenu_CloseHoodDown;ContextMenu_TuckIn;ContextMenu_TuckOut;ContextMenu_RollUp;ContextMenu_RollDown;ContextMenu_OpenRollUp;ContextMenu_OpenRollDown;ContextMenu_CloseRollUp;ContextMenu_CloseRollDown;ContextMenu_TieOnWaist",
         DisableRipClothingFav = true,
         -- Minimum=0 Maximum=100 Default=0
         BagceptionNestingLevel = 0,
